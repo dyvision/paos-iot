@@ -28,10 +28,17 @@ namespace paos_iot {
             ]);
 
             //user info api
-            $url = 'https://'.main_url.'/api/user';
+            $url = 'https://' . main_url . '/api/user';
 
             //execute
             return file_get_contents($url, false, $context);
+        }
+        function login($id, $guid, $session_id, $user_id)
+        {
+            setcookie('id', $this->id, 0, '/');
+            setcookie('guid', $this->guid, 0, '/');
+            setcookie('session_id', $session_id, 0, '/');
+            setcookie('user_id', $user_id, 0, '/');
         }
     }
     class parsec
@@ -45,8 +52,8 @@ namespace paos_iot {
             $session['session_id'] = $session_id;
             $session['user_id'] = $user_id;
 
-            $file = fopen(session_path,'w');
-            fwrite($file,json_encode($session));
+            $file = fopen(session_path, 'w');
+            fwrite($file, json_encode($session));
             fclose($file);
         }
     }
@@ -68,25 +75,26 @@ namespace paos_iot {
         }
         function get()
         {
-            return shell_exec(python.' '.py_path.'wifi.py');
+            return shell_exec(python . ' ' . py_path . 'wifi.py');
         }
-        function get_cache(){
-            $config = json_decode(file_get_contents(config_path),true);
+        function get_cache()
+        {
+            $config = json_decode(file_get_contents(config_path), true);
             return $config['ssid'];
         }
-        function connect($ssid,$password)
+        function connect($ssid, $password)
         {
-            return shell_exec(python.' '.py_path.'wifi.py '.$ssid.' '.$password);
+            return shell_exec(python . ' ' . py_path . 'wifi.py ' . $ssid . ' ' . $password);
         }
-        function save($ssid,$password)
+        function save($ssid, $password)
         {
-            $config = json_decode(file_get_contents(config_path),true);
+            $config = json_decode(file_get_contents(config_path), true);
 
             $config['ssid'] = $ssid;
             $config['wifi_password'] = $password;
 
-            $file = fopen(config_path,'w');
-            fwrite($file,json_encode($config));
+            $file = fopen(config_path, 'w');
+            fwrite($file, json_encode($config));
             fclose($file);
         }
     }

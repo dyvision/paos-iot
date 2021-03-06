@@ -26,8 +26,6 @@ class wifi:
         return json.dumps(wifi_list)
 
     def set_wifi(self, ssid, password):
-        print(ssid)
-        print(password)
         s = ssid
         p = password
 

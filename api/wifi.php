@@ -9,6 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $post = $_POST;
         $wifi = new wifi();
         if ($wifi->connect($post['ssid'], base64_encode($post['password'])) == 'success') {
+            $wifi->save($post['ssid'], base64_encode($post['password']));
             header('location ../wifi.php');
         } else {
             header('location ../wifi.php?error=1');
@@ -16,6 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         $wifi = new wifi();
         if ($wifi->connect($post['ssid'], base64_encode($post['password'])) == 'success') {
+            $wifi->save($post['ssid'], base64_encode($post['password']));
             $response['message'] = 'connected';
         } else {
             $response['message'] = 'could not connect';

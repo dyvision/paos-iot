@@ -13,7 +13,7 @@ from wireless import Wireless
 class wifi:
     def get(self):
         wifi_list = []
-        shelllist = os.system('nmcli --fields SSID device wifi')
+        shelllist = os.popen('nmcli --fields SSID device wifi').read()
         ssids = shelllist.split('\r\n')
         for ssid in ssids:
             wifi_list.append(ssid)

@@ -8,8 +8,11 @@ from paos_iot import *
 wifi_cli = wifi()
 try:
     wifi_file = open('../wifi.json','r')
-    cache = json.loads(wifi_file)
-    wifi_cli.set_wifi(wifi_file['ssid'],wifi_file['password'])
+    if sys.argv[1] == 'resetwifi':
+        Exception('resetting')
+    else:
+        cache = json.loads(wifi_file)
+        wifi_cli.set_wifi(wifi_file['ssid'],wifi_file['password'])
 except:
     try:
         str(sys.argv[1])

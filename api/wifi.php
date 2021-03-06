@@ -10,9 +10,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $wifi = new wifi();
         if ($wifi->connect($post['ssid'], $post['password']) == 'success') {
             $wifi->save($post['ssid'], $post['password']);
-            header('location ../wifi.php');
+            header('location: ../wifi.php');
         } else {
-            header('location ../wifi.php?error=1');
+            header('location: ../wifi.php?error=1');
         }
     } else {
         $wifi = new wifi();

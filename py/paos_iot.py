@@ -7,8 +7,9 @@ import xml.etree.ElementTree as tree
 import os
 import sounddevice
 from wireless import Wireless
+from gi.repository import NMClient
 gi.require_version('NetworkManager', '1.0')
-from gi.repository import NetworkManager, NMClient
+from gi.repository import NetworkManager
 
 
 

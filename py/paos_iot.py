@@ -6,6 +6,7 @@ import urllib
 import xml.etree.ElementTree as tree
 import os
 import sounddevice
+import time
 from wireless import Wireless
 
 
@@ -14,7 +15,7 @@ class wifi:
     def get(self):
         wifi_list = []
         os.popen('sudo nmcli device wifi rescan')
-        sleep 2
+        time.sleep(2)
         shelllist = os.popen('nmcli --fields SSID device wifi').read().splitlines()
         for ssid in shelllist:
             if ssid.strip() == '--':

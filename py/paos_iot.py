@@ -21,7 +21,7 @@ class wifi:
 
     def set_wifi(self, ssid, password):
         s = ssid
-        p = str(base64.b64decode(password + '==').decode('ascii'))
+        p = str(base64.b64decode(password + '=='))
 
         wireless = Wireless()
         wireless

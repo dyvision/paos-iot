@@ -14,7 +14,7 @@ class wifi:
     def get(self):
         wifi_list = []
         shelllist = os.popen('nmcli --fields SSID device wifi').read()
-        ssids = shelllist.split('\r\n')
+        ssids = shelllist.split('\n')
         for ssid in ssids:
             wifi_list.append(ssid)
         return json.dumps(wifi_list)

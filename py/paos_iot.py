@@ -7,23 +7,16 @@ import xml.etree.ElementTree as tree
 import os
 import sounddevice
 from wireless import Wireless
-from gi.repository import NMClient
-gi.require_version('NetworkManager', '1.0')
-from gi.repository import NetworkManager
 
 
 
 class wifi:
     def get(self):
         wifi_list = []
-        nmc = NMClient.Client.new()
-        devs = nmc.get_devices()
-
-        for dev in devs:
-            if dev.get_device_type() == NetworkManager.DeviceType.WIFI:
-                for ap in dev.get_access_points():
-                    for ssid in ap.get_ssid():
-                        wifi_list.append(ssid)
+        shelllist = os.system('nmcli --fields SSID device wifi')
+        ssids = shelllist.split('\r\n')
+        for ssid in ssids:
+            wifi_list.append(ssid)
         return json.dumps(wifi_list)
 
     def set_wifi(self, ssid, password):

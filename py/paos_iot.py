@@ -9,6 +9,8 @@ import sounddevice
 from wireless import Wireless
 from gi.repository import NetworkManager, NMClient
 
+gi.require_version('NetworkManager', '1.0')
+
 class wifi:
     def get(self):
         wifi_list = []

@@ -8,16 +8,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($post == null) {
         $post = $_POST;
         $wifi = new wifi();
-        if ($wifi->connect($post['ssid'], base64_encode($post['password'])) == 'success') {
-            $wifi->save($post['ssid'], base64_encode($post['password']));
+        if ($wifi->connect($post['ssid'], $post['password']) == 'success') {
+            $wifi->save($post['ssid'], $post['password']);
             header('location ../wifi.php');
         } else {
             header('location ../wifi.php?error=1');
         }
     } else {
         $wifi = new wifi();
-        if ($wifi->connect($post['ssid'], base64_encode($post['password'])) == 'success') {
-            $wifi->save($post['ssid'], base64_encode($post['password']));
+        if ($wifi->connect($post['ssid'], $post['password']) == 'success') {
+            $wifi->save($post['ssid'],$post['password']);
             $response['message'] = 'connected';
         } else {
             $response['message'] = 'could not connect';

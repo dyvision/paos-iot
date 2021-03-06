@@ -16,7 +16,7 @@ class wifi:
         os.popen('sudo nmcli device wifi rescan')
         shelllist = os.popen('nmcli --fields SSID device wifi').read().splitlines()
         for ssid in shelllist:
-            if ssid == '--':
+            if ssid.strip() is '--':
                 continue
             else:
                 wifi_list.append(ssid.strip())

@@ -33,10 +33,9 @@ class wifi:
         wireless
         testwifi = wireless.connect(ssid=s, password=p)
         if testwifi:
-            return 'success'
+            return '{"message":"success"}'
         else:
-            print(testwifi)
-            return 'failure'
+            return '{"message":"failure"}'
 
 class audio:
     def get_device(self):

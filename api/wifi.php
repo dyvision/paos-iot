@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($post == null) {
         $post = $_POST;
         $wifi = new wifi();
-        if ($wifi->connect($post['ssid'], $post['password']) == 'success') {
+        if (json_decode($wifi->connect($post['ssid'], $post['password']),true)['message'] == 'success') {
             $wifi->save($post['ssid'], $post['password']);
             header('location: ../wifi.php');
         } else {
@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     } else {
         $wifi = new wifi();
-        if ($wifi->connect($post['ssid'], $post['password']) == 'success') {
+        if (json_decode($wifi->connect($post['ssid'], $post['password']),true)['message'] == 'success') {
             $wifi->save($post['ssid'],$post['password']);
             $response['message'] = 'connected';
         } else {

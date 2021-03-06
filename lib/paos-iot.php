@@ -84,7 +84,7 @@ namespace paos_iot {
         }
         function connect($ssid, $password)
         {
-            return shell_exec(python . ' ' . py_path . 'wifi.py ' . $ssid . ' ' . $password.'&');
+            return shell_exec(python . ' ' . py_path . 'wifi.py ' . $ssid . ' ' . $password.' &');
         }
         function save($ssid, $password)
         {

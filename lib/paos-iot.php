@@ -94,6 +94,7 @@ namespace paos_iot {
 
             $config['ssid'] = $ssid;
             $config['wifi_password'] = $password;
+            $config['wifi'] = true;
 
             $file = fopen(config_path, 'w');
             fwrite($file, json_encode($config));

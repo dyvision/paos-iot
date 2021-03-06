@@ -35,8 +35,8 @@ namespace paos_iot {
         }
         function login($id, $guid, $session_id, $user_id)
         {
-            setcookie('id', $this->id, 0, '/');
-            setcookie('guid', $this->guid, 0, '/');
+            setcookie('id', $id, 0, '/');
+            setcookie('guid', $guid, 0, '/');
             setcookie('session_id', $session_id, 0, '/');
             setcookie('user_id', $user_id, 0, '/');
         }

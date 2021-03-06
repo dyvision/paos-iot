@@ -33,6 +33,7 @@ class wifi:
         if testwifi:
             return 'success'
         else:
+            print(testwifi)
             return 'failure'
 
 class audio:

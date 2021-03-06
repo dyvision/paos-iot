@@ -13,9 +13,13 @@ from wireless import Wireless
 class wifi:
     def get(self):
         wifi_list = []
+        os.popen('sudo nmcli device wifi rescan')
         shelllist = os.popen('nmcli --fields SSID device wifi').read().splitlines()
         for ssid in shelllist:
-            wifi_list.append(ssid.strip())
+            if ssid == '--':
+                continue
+            else:
+                wifi_list.append(ssid.strip())
         del(wifi_list[0])
         return json.dumps(wifi_list)
 

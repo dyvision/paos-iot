@@ -12,8 +12,12 @@ from wireless import Wireless
 
 class wifi:
     def get(self):
-        shelllist = os.popen('nmcli --fields SSID device wifi').read().strip().splitlines()
-        return json.dumps(shelllist)
+        wifi_list = []
+        shelllist = os.popen('nmcli --fields SSID device wifi').read().splitlines()
+        for ssid in shelllist:
+            wifi_list.append(ssid.strip())
+        del(wifi_list[0])
+        return json.dumps(wifi_list)
 
     def set_wifi(self, ssid, password):
         s = ssid

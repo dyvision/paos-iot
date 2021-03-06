@@ -11,6 +11,9 @@ $cached = $wifi->get_cache();
 if ($cached != '') {
     echo "<h3>Saved Connection: $cached </h3>";
 }
+if ($_GET['error'] == 1){
+    echo '<span>Connection failed, try again</span>';
+}
 ?>
 <form action='api/wifi.php' method='POST'>
     <select name='ssid'>

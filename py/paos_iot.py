@@ -42,7 +42,7 @@ class wifi:
 class audio:
     def get_device(self):
         device_list = []
-        shelllist = os.popen('pactl list-sinks | grep -E "Ports|analog-ou|html-ou"').read().splitlines()
+        shelllist = os.popen('pacmd list sinks | grep -E "Ports|analog-ou|hdmi-ou"').read().splitlines()
         active_device = shelllist[-1].split(':')
         active_device = active_device[-1].strip()
         for device in shelllist:

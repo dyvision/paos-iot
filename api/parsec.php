@@ -26,4 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
         print_r(json_encode($response));
     }
+} elseif ($_SERVER['REQUEST_METHOD'] == "DELETE"){
+    $parsec = new parsec();
+    $parsec->kill_session();
 }

@@ -25,4 +25,6 @@ $parsec = new parsec();
         ?>
     </select>
     <button>Launch</button>
+    
 </form>
+<button onclick='kill_session();'>Kill Session</button>

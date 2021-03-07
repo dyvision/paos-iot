@@ -1,5 +1,6 @@
 <h1>Configure Audio</h1>
 <?php
+ini_set('display_errors', 1); ini_set('display_startup_errors', 1); error_reporting(E_ALL); 
 include('lib/paos-iot.php');
 
 use paos_iot\audio;
@@ -14,7 +15,6 @@ if ($cached != '') {
 ?>
 
 <form action='api/audio.php' method='POST'>
-    <input type='text' name='ssid'>
     <select name='device'>
         <?php
 

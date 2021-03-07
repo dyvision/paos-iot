@@ -73,7 +73,7 @@ class audio:
         return
     def test(self):
         m = alsaaudio.Mixer()
-        return m.get_volume()
+        return m.getvolume()
 
 
 class display:

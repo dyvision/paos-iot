@@ -132,7 +132,7 @@ namespace paos_iot {
         }
         function set_volume($direction, $value)
         {
-            shell_exec('sudo '.python . ' ' . py_path . 'audio.py volume ' . $direction . ' ' . $value);
+            shell_exec('sudo -H -u parsec bash -c \''.python . ' ' . py_path . 'audio.py volume ' . $direction . ' ' . $value.'\'');
             return;
         }
         function get_device()

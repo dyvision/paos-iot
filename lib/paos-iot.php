@@ -77,7 +77,7 @@ namespace paos_iot {
         }
         function kill_session()
         {
-            return shell_exec(python . ' ' . py_path . 'launch.py kill');
+            return shell_exec('sudo -H -u parsec bash -c \'sudo pkill parsec\'');
         }
     }
     class settings

@@ -83,6 +83,7 @@ class display:
 
 class commands:
     def kill_session(self):
+        os.popen('sudo pkill parsec')
         return
     def launch_session(self,session_id,peer_id):
         os.popen("export DISPLAY=:0;sudo parsecd session_id="+session_id+":peer_id="+peer_id+":client_overlay=0:client_immersive=0:client_vsync=1");

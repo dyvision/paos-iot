@@ -45,10 +45,11 @@ class audio:
         shelllist = os.popen('pacmd list-cards | grep -E "output:" | grep -E ":analog-stereo"').read().splitlines()
         active_device = shelllist[-1]
         del(shelllist[-1])
+        del(shelllist[0])
         for device in shelllist:
             stringarray = []
             stringarray = device.split(':')
-            new_device = stringarray[0]+':'+stringarray[1]+stringarray[2]
+            new_device = stringarray[0]+':'+stringarray[1]+':'+stringarray[2]
             device_list.append(new_device.strip())
             
         current_device = active_device.split(':',1)

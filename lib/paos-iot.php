@@ -58,7 +58,7 @@ namespace paos_iot {
         }
         function launch($session_id,$peer_id)
         {
-            return shell_exec(python . ' ' . py_path . 'launch.py launch '.$session_id.' '.$peer_id);
+            return shell_exec('sudo -H -u parsec bash -c \''.python . ' ' . py_path . 'launch.py launch '.$session_id.' '.$peer_id.'\'');
         }
         function get($id,$guid)
         {

@@ -7,6 +7,7 @@ import xml.etree.ElementTree as tree
 import os
 import time
 import alsaaudio
+import math
 from subprocess import call
 from wireless import Wireless
 
@@ -72,7 +73,7 @@ class audio:
         m = alsaaudio.Mixer()
         num = m.getvolume()
         move = direct * value
-        m.setvolume(num+move)
+        m.setvolume(num + move)
         return m.getvolume()
 
 

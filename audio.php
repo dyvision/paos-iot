@@ -20,7 +20,7 @@ if ($cached != '') {
 
 
         $list = json_decode($audio->get_device(), true);
-        foreach ($list as $device) {
+        foreach ($list['available_devices'] as $device) {
            echo "<option value='$device'>$device</option>";
         }
 

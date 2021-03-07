@@ -53,8 +53,7 @@ class audio:
         return json.dumps(result)
 
     def set_device(self, device):
-        os.popen('pacmd set-sink-port 0 '+device)
-        os.popen('pacmd set-default-sink '+device)
+        os.popen('pacmd set-default-source '+device)
         return
 
     def set_volume(self, direction, value):

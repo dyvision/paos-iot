@@ -7,6 +7,7 @@ import xml.etree.ElementTree as tree
 import os
 import sounddevice
 import time
+import soundcard
 from subprocess import call
 from wireless import Wireless
 
@@ -71,6 +72,8 @@ class audio:
             direct = '-'
         call(["amixer", "-D", "pulse", "sset", "Master", value+"%"+direct])
         return
+    def test(self):
+        return soundcard.all_speakers()
 
 
 class display:

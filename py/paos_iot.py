@@ -44,7 +44,9 @@ class audio:
         device_list = []
         shelllist = os.popen('pactl list short sources').read().splitlines()
         for device in shelllist:
-            device_list.append(device.strip())
+            stringarray = []
+            stringarray = device.split('\t')
+            device_list.append(stringarray[1].strip())
             
         result = device_list
 

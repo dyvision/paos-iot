@@ -1,6 +1,6 @@
 <h1>Configure Audio</h1>
 <?php
-ini_set('display_errors', 1); ini_set('display_startup_errors', 1); error_reporting(E_ALL); 
+//ini_set('display_errors', 1); ini_set('display_startup_errors', 1); error_reporting(E_ALL); 
 include('lib/paos-iot.php');
 
 use paos_iot\audio;
@@ -30,7 +30,6 @@ if ($cached != '') {
     <button>Change Device</button>
 </form>
 
-<?php print_r(json_decode($audio->get_device(),true)) ?>
 <h3>Volume</h3>
 <button>+</button>
 <button>-</button>

@@ -8,5 +8,4 @@ try:
     else:
         print(audio_cli.set_device(sys.argv[2]))
 except:
-    #print(audio_cli.get_device())   
-    print(audio_cli.set_volume(sys.argv[2],sys.argv[3]))
+    print(audio_cli.get_device())

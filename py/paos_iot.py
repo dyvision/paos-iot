@@ -53,7 +53,7 @@ class audio:
                 device_list.append(stringarray[0])
             
         del(device_list[-1])
-        result = json.dumps(device_list)
+        result = device_list
 
         return json.dumps(result)
 

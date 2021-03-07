@@ -67,14 +67,13 @@ class audio:
 
     def set_volume(self, direction, value):
         if direction == 'up':
-            direct = 1
+            direct = value
         else:
-            direct = -1
-        move = abs(direct * value)
+            direct = -value
 
         am = alsaaudio.Mixer()
         current_volume = am.getvolume()
-        new_volume = min(current_volume[0] + move, 100)
+        new_volume = min(current_volume[0] + direct, 100)
         am.setvolume(new_volume)
         return new_volume
 

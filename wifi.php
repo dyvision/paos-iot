@@ -11,23 +11,24 @@ $cached = $wifi->get_cache();
 if ($cached != '') {
     echo "<h3>Saved Connection: $cached </h3>";
 }
-if ($_GET['error'] == 1){
+if ($_GET['error'] == 1) {
     echo '<span>Connection failed, try again</span>';
 }
 ?>
 <form action='api/wifi.php' method='POST'>
-    <select name='ssid'>
+    <input type='text' name='ssid'>
+    <!--<select name='ssid'>
         <?php
 
 
-        $list = json_decode($wifi->get(), true);
-        foreach ($list as $ssid) {
-            echo "<option value='$ssid'>$ssid</option>";
-        }
+        #$list = json_decode($wifi->get(), true);
+        #foreach ($list as $ssid) {
+        #    echo "<option value='$ssid'>$ssid</option>";
+        #}
 
 
         ?>
-    </select>
+    </select>-->
     <input type='password' name='password'>
     <button>Connect</button>
 </form>

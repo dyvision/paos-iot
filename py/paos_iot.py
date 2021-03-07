@@ -74,7 +74,7 @@ class audio:
         num = m.getvolume()[0]
         print(num)
         move = direct * value
-        final = int(float(num)) + int(move)
+        final = num + int(move)
         m.setvolume(final)
         return m.getvolume()
 

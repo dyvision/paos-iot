@@ -56,7 +56,7 @@ class audio:
             device_list.append(new_device.strip())
             
         current_device = active_device.split(':',1)
-        result = {'active_device':current_device[1],"available_devices":device_list}
+        result = json.dumps({'active_device':current_device[1],"available_devices":device_list})
 
         return result
 

@@ -26,6 +26,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         print_r(json_encode($response));
     }
 } elseif($_SERVER['REQUEST_METHOD'] == 'PUT'){
+    $post = json_decode(file_get_contents('php://input'), true);
+    if ($post == null) {
+        $post = $_POST;
+    }
     $audio = new audio();
         if (json_decode($audio->set_volume($post['direction'],$post['value']),true)) {
             $response['message'] = 'success';

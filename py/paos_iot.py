@@ -5,7 +5,6 @@ import requests
 import urllib
 import xml.etree.ElementTree as tree
 import os
-import sounddevice
 import time
 import alsaaudio
 from subprocess import call

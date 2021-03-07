@@ -66,6 +66,7 @@ class audio:
         return
 
     def set_volume(self, direction, value):
+        value = int(value)
         if direction == 'up':
             direct = value
         else:

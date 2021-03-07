@@ -1,5 +1,5 @@
 <head>
-    <script href='lib/paos_iot.js'></script>
+    <script src='lib/paos_iot.js'></script>
 </head>
 <h1>Configure Audio</h1>
 <?php

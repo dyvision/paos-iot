@@ -33,6 +33,8 @@ class wifi:
         wireless = Wireless()
         wireless
         testwifi = wireless.connect(ssid=s, password=p)
+        time.sleep(2)
+        testwifi = wireless.connect(ssid=s, password=p)
         if testwifi:
             return '{"message":"success"}'
         else:

@@ -56,6 +56,29 @@ namespace paos_iot {
             fwrite($file, json_encode($session));
             fclose($file);
         }
+        function launch($session_id,$peer_id)
+        {
+            return shell_exec(python . ' ' . py_path . 'launch.py launch '.$session_id.' '.$peer_id);
+        }
+        function get($id,$guid)
+        {
+            //create auth header
+            $context = stream_context_create([
+                "http" => [
+                    "header" => "Authorization: Basic " . base64_encode($id . ':' . $guid)
+                ]
+            ]);
+
+            //user info api
+            $url = 'https://' . main_url . '/api/hosts';
+
+            //execute
+            return file_get_contents($url, false, $context);
+        }
+        function kill_session()
+        {
+            return shell_exec(python . ' ' . py_path . 'launch.py kill');
+        }
     }
     class settings
     {
@@ -67,7 +90,7 @@ namespace paos_iot {
         {
         }
     }
-    class wifi
+    class wifi //done
     {
         function __construct()
         {
@@ -84,7 +107,7 @@ namespace paos_iot {
         }
         function connect($ssid, $password)
         {
-            $result = shell_exec('sudo '.python . ' ' . py_path . 'wifi.py ' . $ssid . ' ' . $password);
+            $result = shell_exec('sudo ' . python . ' ' . py_path . 'wifi.py ' . $ssid . ' ' . $password);
             shell_exec('sudo dhclient');
             return $result;
         }
@@ -101,24 +124,40 @@ namespace paos_iot {
             fclose($file);
         }
     }
-    
-    class audio
+    class audio //done
     {
         function __construct()
         {
             return;
         }
-        function get_volume()
+        function set_volume($direction, $value)
         {
-        }
-        function set_volume()
-        {
+            shell_exec(python . ' ' . py_path . 'audio.py volume ' . $direction . ' ' . $value);
+            return;
         }
         function device_get()
         {
+            return shell_exec(python . ' ' . py_path . 'audio.py');
         }
-        function device_set()
+        function device_set($device)
         {
+            shell_exec(python . ' ' . py_path . 'audio.py device ' . $device);
+            return;
+        }
+        function save($device)
+        {
+            $config = json_decode(file_get_contents(config_path), true);
+
+            $config['audio_device'] = $device;
+
+            $file = fopen(config_path, 'w');
+            fwrite($file, json_encode($config));
+            fclose($file);
+        }
+        function get_cache()
+        {
+            $config = json_decode(file_get_contents(config_path), true);
+            return $config['audio_device'];
         }
     }
     class display
@@ -145,9 +184,6 @@ namespace paos_iot {
         function __construct()
         {
             return;
-        }
-        function kill_session()
-        {
         }
     }
 }

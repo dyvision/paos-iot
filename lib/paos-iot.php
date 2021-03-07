@@ -94,8 +94,6 @@ namespace paos_iot {
     {
         function __construct()
         {
-            shell_exec('pulseaudio -k');
-            shell_exec('pulseaudio --start');
             return;
         }
         function get()
@@ -130,6 +128,8 @@ namespace paos_iot {
     {
         function __construct()
         {
+            shell_exec('pulseaudio -k');
+            shell_exec('pulseaudio --start');
             return;
         }
         function set_volume($direction, $value)

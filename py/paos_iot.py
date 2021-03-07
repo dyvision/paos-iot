@@ -61,7 +61,7 @@ class audio:
         return json.dumps(result)
 
     def set_device(self, device):
-        os.popen('pacmd set-default-source '+device)
+        os.popen('pacmd set-card-profile 0 '+device)
         return
 
     def set_volume(self, direction, value):

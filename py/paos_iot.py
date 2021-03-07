@@ -42,7 +42,7 @@ class wifi:
 class audio:
     def get_device(self):
         device_list = []
-        shelllist = os.popen('pacmd list-cards | grep -E "output:"').read().splitlines()
+        shelllist = os.popen('pacmd list-cards | grep -E "output:" | grep -E ":analog-stereo"').read().splitlines()
         active_device = shelllist[-1]
         del(shelllist[-1])
         for device in shelllist:

@@ -128,7 +128,6 @@ namespace paos_iot {
     {
         function __construct()
         {
-            shell_exec('pulseaudio -k');
             shell_exec('pulseaudio --start');
             return;
         }

@@ -12,9 +12,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $post = $_POST;
         $parsec = new parsec();
         if (json_decode($parsec->launch($_COOKIE['session_id'], $post['peer_id']), true)) {
-            header('location: ../parsec.php');
+            #header('location: ../parsec.php');
         } else {
-            header('location: ../parsec.php?error=1');
+            #header('location: ../parsec.php?error=1');
         }
     } else {
         $parsec = new parsec();

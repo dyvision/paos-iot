@@ -12,12 +12,12 @@ $parsec = new parsec();
 ?>
 
 <form action='api/parsec.php' method='POST'>
-    <select disabled name='device'>
+    <select name='device'>
         <?php
 
 
         $list = json_decode($parsec->get($_COOKIE['id'],$_COOKIE['guid']), true);
-        foreach ($list as $device) {
+        foreach ($list['data'] as $device) {
            echo "<option value='".$device['peer_id']."'>".$device['name']."</option>";
         }
 

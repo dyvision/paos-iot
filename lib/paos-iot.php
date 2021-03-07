@@ -107,7 +107,7 @@ namespace paos_iot {
         }
         function connect($ssid, $password)
         {
-            $result = shell_exec('sudo ' . python . ' ' . py_path . 'wifi.py ' . $ssid . ' ' . $password);
+            $result = shell_exec(python . ' ' . py_path . 'wifi.py ' . $ssid . ' ' . $password);
             shell_exec('sudo dhclient');
             return $result;
         }

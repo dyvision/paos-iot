@@ -7,7 +7,7 @@ import xml.etree.ElementTree as tree
 import os
 import sounddevice
 import time
-import soundcard
+import alsaaudio
 from subprocess import call
 from wireless import Wireless
 
@@ -73,7 +73,8 @@ class audio:
         call(["amixer", "-D", "pulse", "sset", "Master", value+"%"+direct])
         return
     def test(self):
-        return soundcard.default_speaker()
+        m = alsaaudio.Mixer()
+        return m.get_volume()
 
 
 class display:

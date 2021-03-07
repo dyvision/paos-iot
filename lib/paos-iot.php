@@ -179,11 +179,4 @@ namespace paos_iot {
         {
         }
     }
-    class commands
-    {
-        function __construct()
-        {
-            return;
-        }
-    }
 }

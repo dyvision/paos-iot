@@ -73,7 +73,7 @@ class audio:
         m = alsaaudio.Mixer()
         num = m.getvolume()[0]
         move = direct * value
-        final = int(num) + int(move)
+        final = int(float(num)) + int(move)
         m.setvolume(final)
         return m.getvolume()
 

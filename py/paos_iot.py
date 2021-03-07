@@ -43,12 +43,14 @@ class audio:
     def get_device(self):
         device_list = []
         shelllist = os.popen('pacmd list-sinks | grep -E "Ports|analog-ou|html-ou"').read().splitlines()
-        active_device = shelllist[-1]
+        active_device = shelllist[-1].split(':')
+        active_device = active_device[-1]
         for device in shelllist:
             stringarray = []
             stringarray = device.strip().split(':')
             del(stringarray[-1])
             device_list.append(stringarray[0])
+            del(device_list[-1])
         
         result = {'current_device': active_device, 'available_devices':device_list}
 

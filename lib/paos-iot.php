@@ -137,7 +137,7 @@ namespace paos_iot {
         }
         function get_device()
         {
-            return shell_exec(python . ' ' . py_path . 'audio.py');
+            return shell_exec('sudo '.python . ' ' . py_path . 'audio.py');
         }
         function set_device($device)
         {

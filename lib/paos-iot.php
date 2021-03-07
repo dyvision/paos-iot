@@ -12,7 +12,7 @@ namespace paos_iot {
     //versioning
     const python = 'python3';
 
-    class user
+    class user //done
     {
         function __construct()
         {
@@ -41,7 +41,7 @@ namespace paos_iot {
             setcookie('user_id', $user_id, 0, '/');
         }
     }
-    class parsec
+    class parsec //done
     {
         function __construct()
         {
@@ -135,11 +135,11 @@ namespace paos_iot {
             shell_exec(python . ' ' . py_path . 'audio.py volume ' . $direction . ' ' . $value);
             return;
         }
-        function device_get()
+        function get_device()
         {
             return shell_exec(python . ' ' . py_path . 'audio.py');
         }
-        function device_set($device)
+        function set_device($device)
         {
             shell_exec(python . ' ' . py_path . 'audio.py device ' . $device);
             return;

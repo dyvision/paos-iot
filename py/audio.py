@@ -1,8 +1,3 @@
-import os
-import sys
-import base64
-import json
-from wireless import Wireless 
 from paos_iot import *
 
 audio_cli = audio()

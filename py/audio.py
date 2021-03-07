@@ -13,5 +13,4 @@ try:
     else:
         print(audio_cli.set_device(sys.argv[2]))
 except:
-    #print(audio_cli.get_device())
-     print(audio_cli.test())       
+    print(audio_cli.get_device())   

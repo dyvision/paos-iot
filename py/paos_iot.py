@@ -30,9 +30,9 @@ class wifi:
         s = ssid
         p = password
 
+        testwifi = os.popen('sudo service wpa_supplicant start')
         wireless = Wireless()
         wireless
-        testwifi = os.popen('sudo service wpa_supplicant start')
         time.sleep(2)
         testwifi = wireless.connect(ssid=s, password=p)
         if testwifi:

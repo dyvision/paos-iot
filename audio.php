@@ -15,7 +15,7 @@ if ($cached != '') {
 ?>
 
 <form action='api/audio.php' method='POST'>
-    <select name='device'>
+    <select disabled name='device'>
         <?php
 
 
@@ -27,7 +27,7 @@ if ($cached != '') {
 
         ?>
     </select>
-    <button>Change Device</button>
+    <button disabled>Change Device</button>
 </form>
 <?php print_r($audio->get_device())?>
 <h3>Volume</h3>

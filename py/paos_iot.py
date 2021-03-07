@@ -73,7 +73,7 @@ class audio:
         call(["amixer", "-D", "pulse", "sset", "Master", value+"%"+direct])
         return
     def test(self):
-        return soundcard.all_speakers()
+        return soundcard.default_speaker()
 
 
 class display:

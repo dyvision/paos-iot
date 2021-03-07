@@ -70,13 +70,12 @@ class audio:
             direct = 1
         else:
             direct = -1
-        m = alsaaudio.Mixer()
-        num = m.getvolume()
-        print(num)
-        move = direct * value
-        final = num + int(move)
-        m.setvolume(final)
-        return m.getvolume()
+        move = int(direct * value)
+
+        am = alsaaudio.Mixer()
+        current_volume = am.getvolume()
+        new_volume = min(current_volume[0] + move, 100)
+        am.setvolume(new_volume)
 
 
 class display:

@@ -13,9 +13,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $parsec = new parsec();
         $final = print_r($parsec->launch($_COOKIE['session_id'], $post['peer_id']));
         if ($final) {
-            #header('location: ../parsec.php');
+            header('location: ../parsec.php');
         } else {
-            #header('location: ../parsec.php?error=1');
+            header('location: ../parsec.php?error=1');
         }
     } else {
         $parsec = new parsec();

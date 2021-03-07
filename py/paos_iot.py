@@ -42,15 +42,19 @@ class wifi:
 class audio:
     def get_device(self):
         device_list = []
-        shelllist = os.popen('pactl list short sources').read().splitlines()
+        shelllist = os.popen('pacmd list-cards | grep -E "output:"').read().splitlines()
+        active_device = shelllist[-1]
+        del(shelllist[-1])
         for device in shelllist:
             stringarray = []
-            stringarray = device.split('\t')
-            device_list.append(stringarray[1].strip())
+            stringarray = device.split(':')
+            new_device = stringarray[0]+':'+stringarray[1]
+            device_list.append(new_device.strip())
             
-        result = device_list
+        current_device = active_device.split(':',1)
+        result = {'active_device':current_device[1],"available_devices":device_list}
 
-        return json.dumps(result)
+        return result
 
     def set_device(self, device):
         os.popen('pacmd set-default-source '+device)

@@ -29,7 +29,7 @@ if ($cached != '') {
     </select>
     <button>Change Device</button>
 </form>
-
+<?php print_r($list)?>
 <h3>Volume</h3>
 <button>+</button>
 <button>-</button>

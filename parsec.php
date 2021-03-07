@@ -12,7 +12,7 @@ $parsec = new parsec();
 ?>
 
 <form action='api/parsec.php' method='POST'>
-    <select name='device'>
+    <select name='peer_id'>
         <?php
 
 

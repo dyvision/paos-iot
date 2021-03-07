@@ -48,7 +48,7 @@ class audio:
         for device in shelllist:
             stringarray = []
             stringarray = device.split(':')
-            new_device = stringarray[0]+':'+stringarray[1]
+            new_device = stringarray[0]+':'+stringarray[1]+stringarray[2]
             device_list.append(new_device.strip())
             
         current_device = active_device.split(':',1)

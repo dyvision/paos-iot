@@ -1,3 +1,6 @@
+<head>
+    <script href='lib/paos_iot.js'></script>
+</head>
 <h1>Configure Audio</h1>
 <?php
 //ini_set('display_errors', 1); ini_set('display_startup_errors', 1); error_reporting(E_ALL); 

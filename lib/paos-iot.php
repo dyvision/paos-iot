@@ -101,16 +101,17 @@ namespace paos_iot {
             fclose($file);
         }
     }
+    
     class audio
     {
         function __construct()
         {
             return;
         }
-        function get()
+        function get_volume()
         {
         }
-        function volume()
+        function set_volume()
         {
         }
         function device_get()

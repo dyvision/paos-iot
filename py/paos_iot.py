@@ -7,8 +7,8 @@ import xml.etree.ElementTree as tree
 import os
 import sounddevice
 import time
+from subprocess import call
 from wireless import Wireless
-
 
 
 class wifi:
@@ -16,7 +16,8 @@ class wifi:
         wifi_list = []
         os.popen('sudo nmcli device wifi rescan')
         time.sleep(2)
-        shelllist = os.popen('nmcli --fields SSID device wifi').read().splitlines()
+        shelllist = os.popen(
+            'nmcli --fields SSID device wifi').read().splitlines()
         for ssid in shelllist:
             if ssid.strip() == '--':
                 continue
@@ -37,21 +38,37 @@ class wifi:
         else:
             return '{"message":"failure"}'
 
+
 class audio:
     def get_device(self):
-        return
+        device_list = []
+        shelllist = os.popen('pacmd list-sinks | grep alsa.mixer_name').read().splitlines
+        for device in shelllist:
+            device_list.append(device.strip())
+        return json.dumps(device_list)
+
     def set_device(self, device):
         return
-    def set_volume(self, direction,value):
+
+    def set_volume(self, direction, value):
+        if direction == 'up':
+            direct = '+'
+        else:
+            direct = '-'
+        call(["amixer", "-D", "pulse", "sset", "Master", value+"%"+direct])
         return
+
 
 class display:
     def get_device(self):
         return
+
     def set_device(self, device):
         return
+
     def resolution(self, resolution):
         return
+
 
 class commands:
     def kill_session(self):

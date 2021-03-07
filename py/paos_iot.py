@@ -70,7 +70,7 @@ class audio:
             direct = 1
         else:
             direct = -1
-        m = alsaaudio.Mixer()
+        m = alsaaudio.Mixer()[0]
         num = m.getvolume()
         print(num)
         move = direct * value

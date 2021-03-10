@@ -26,6 +26,9 @@ body{
     text-align: left;
 }
 .exit{
+    font-size:42px;
+    font-weight:700;
+    color:rgb(255, 98, 242);
     position: fixed;
     top:0;
     left:0;

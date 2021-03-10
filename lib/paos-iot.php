@@ -180,4 +180,18 @@ namespace paos_iot {
         {
         }
     }
+    class blue{
+        function __construct(){
+            return;
+        }
+        function get(){
+            return shell_exec(python . ' ' . py_path . 'blue.py');
+        }
+        function set($device){
+            return shell_exec(python . ' ' . py_path . 'blue.py connect '.$device);
+        }
+        function delete($device){
+            return shell_exec(python . ' ' . py_path . 'blue.py disconnect '.$device);
+        }
+    }
 }

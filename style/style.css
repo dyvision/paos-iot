@@ -50,6 +50,8 @@ button{
     font-size:14px;
 }
 .menuitem{
+    display: block;
+    margin:10px;
     padding:10px;
     background: transparent;
     font-weight: 400;

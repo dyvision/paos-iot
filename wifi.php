@@ -5,6 +5,7 @@
 
 <body>
     <center>
+        <div class='exit'>X</div>
         <div class='card'>
             <img width='100%' height='auto' src='style/connection.png'>
             <div class='card-body'>

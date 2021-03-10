@@ -11,7 +11,7 @@
                 <h1>Welcome to PAOS</h1>
                 <a class='menuitem' href='parsec.php'>Launch Parsec</a>
                 <a class='menuitem' href='wifi.php'>WiFi</a>
-                <a class='menuitem' href='bluetooth.php'>Bluetooth</a>
+                <a id='blue' class='menuitem' href='bluetooth.php' onclick='document.getElementById("blue").innerHTML = "Bluetooth - Scanning"'>Bluetooth</a>
         </div>
     </center>
 </body>

@@ -8,7 +8,7 @@
         <div class='exit'><a href='home.php'>X</a></div>
         <div class='card'>
             <img width='100%' height='auto' src='style/connection.png'>
-            <div style='overflow-y:scroll'class='card-body'>
+            <div style='overflow-y:scroll;height:100%'class='card-body'>
                 <h1>Connect your bluetooth controller</h1>
                 <h2>Current Devices:</h2>
                 <?php

@@ -109,9 +109,7 @@ class blue:
         return json.dumps(nearby_devices)
 
     def set(self, device):
-        os.popen('echo -e "pair '+device+'" | bluetoothctl')
-        os.popen('echo -e "trust '+device+'" | bluetoothctl')
-        os.popen('echo -e "connect '+device+'" | bluetoothctl')
+        os.popen('echo -e "pair '+device+'" | bluetoothctl;echo -e "trust '+device+'" | bluetoothctl;echo -e "connect '+device+'" | bluetoothctl')
         return
     def delete_device(self,device):
         os.popen('echo -e "remove '+device+'" | bluetoothctl')

@@ -112,5 +112,5 @@ class blue:
         result = os.system('echo "pair '+device+'" | bluetoothctl;echo "trust '+device+'" | bluetoothctl;echo "connect '+device+'" | bluetoothctl').read()
         return result
     def delete_device(self,device):
-        os.popen('echo "remove '+device+'" | bluetoothctl')
+        os.system('echo "remove '+device+'" | bluetoothctl')
         return

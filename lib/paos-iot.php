@@ -88,6 +88,7 @@ namespace paos_iot {
         }
         function get()
         {
+            return file_get_contents(config_path);
         }
     }
     class wifi //done

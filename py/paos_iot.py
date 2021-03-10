@@ -109,10 +109,9 @@ class blue:
         return json.dumps(nearby_devices)
 
     def set(self, device):
-        s = bluetooth.BluetoothSocket(bluetooth.RFCOMM)
-        s.connect((device,1))
+        os.popen('echo -e "connect '+device+'" | bluetoothctl')
         return
     def delete_device(self,device):
-        s = bluetooth.BluetoothSocket(bluetooth.RFCOMM)
-        s.disconnect((device,1))
+        os.popen('echo -e "disconnect '+device+'" | bluetoothctl')
+        os.popen('echo -e "remove '+device+'" | bluetoothctl')
         return

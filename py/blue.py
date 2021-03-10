@@ -13,5 +13,9 @@ device = '98:7A:14:B0:C9:C5'
 #        print(blue_cli.delete_device(sys.argv[2]))
 #except:
 #    print(blue_cli.get())
-s = bluetooth.BluetoothSocket(bluetooth.RFCOMM)
-s.connect((device,1))
+try:
+    s = bluetooth.BluetoothSocket(bluetooth.RFCOMM)
+    s.connect((device,1))
+except bluetooth.btcommon.BluetoothError as err:
+    # Error handler
+    pass

@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (json_decode($blue->set($post['device']),true)['message'] == 'success') {
             header('location: ../bluetooth.php');
         } else {
-            header('location: ../bluetooh.php?error=1');
+            header('location: ../bluetooth.php');
         }
     } else {
         $blue = new blue();

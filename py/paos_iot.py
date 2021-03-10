@@ -116,8 +116,8 @@ class blue:
             obj = {}
             items = line.rsplit(' ',1)
             obj = {
-                'name' : items[0],
-                'mac' : items[1]
+                'name' : items[0].strip(),
+                'mac' : items[1].strip()
             }
             devices.append(obj)
         return json.dumps(devices)

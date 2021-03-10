@@ -9,7 +9,7 @@
 
 body{
     animation: fade 600ms forwards;
-    font-family: Helvetica,Arial;
+    font-family: helvetica,arial,ubuntu;
     background: rgb(41, 41, 41);
     color:white;
 }

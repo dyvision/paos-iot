@@ -103,7 +103,7 @@ class commands:
         return
 
 
-class bluez:
+class blue:
     def get(self):
         nearby_devices = bluetooth.discover_devices(True)
         return nearby_devices

@@ -10,9 +10,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $post = $_POST;
         $blue = new blue();
         if (json_decode($blue->set($post['device']),true)['message'] == 'success') {
-            header('location: ../blue.php');
+            header('location: ../bluetooth.php');
         } else {
-            header('location: ../blue.php?error=1');
+            header('location: ../bluetooh.php?error=1');
         }
     } else {
         $blue = new blue();

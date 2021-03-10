@@ -108,6 +108,19 @@ class blue:
         nearby_devices = bluetooth.discover_devices(lookup_names=True)
         return json.dumps(nearby_devices)
 
+    def current(self):
+        devices = []
+        result = os.popen('bt-device -l ').readlines()
+        for line in result:
+            obj = {}
+            items = line.rsplit(' ',1)
+            obj = {
+                'name' : items[0],
+                'mac' : items[1]
+            }
+            devices.append(obj)
+        return json.dumps(devices)
+
     def set(self, device):
         result = os.system('echo "pair '+device+'" | bluetoothctl;echo "trust '+device+'" | bluetoothctl;echo "connect '+device+'" | bluetoothctl').read()
         return result

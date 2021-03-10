@@ -32,6 +32,15 @@ body{
     z-index: 1;
     font-size: 20px;
 }
+a{
+    color:white;
+}
+a:focus{
+    color:grey;
+}
+a:hover{
+    color:grey;
+}
 button{
     padding:10px;
     background: transparent;

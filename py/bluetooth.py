@@ -1,6 +1,7 @@
-from paos_iot import *
+import sys
+from paos_iot import blue
 
-blue_cli = paos_iot.blue()
+blue_cli = blue()
 try:
     str(sys.argv[1])
     if str(sys.argv[1]) == 'volume':

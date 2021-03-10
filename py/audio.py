@@ -1,3 +1,4 @@
+import sys
 from paos_iot import *
 
 audio_cli = audio()

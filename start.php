@@ -8,6 +8,8 @@ include('lib/paos-iot.php');
 <head>
     <link href='style/style.css' rel='stylesheet'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Helvetica">
 </head>
 
 <body>

@@ -111,6 +111,7 @@ class blue:
     def current(self):
         devices = []
         result = os.popen('bt-device -l ').readlines()
+        del(result[0])
         for line in result:
             obj = {}
             items = line.rsplit(' ',1)

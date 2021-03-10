@@ -1,23 +1,35 @@
-<h1>Connect to WiFi</h1>
-<?php
-include('lib/paos-iot.php');
+<head>
+    <link href='style/style.css' rel='stylesheet'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
 
-use paos_iot\wifi;
+<body>
+    <center>
+        <div class='card'>
+            <img width='100%' height='auto' src='style/connection.png'>
+            <div class='card-body'>
+                <h1>Connect to WiFi</h1>
+                <?php
+                include('lib/paos-iot.php');
 
-$wifi = new wifi();
+                use paos_iot\wifi;
 
-$cached = $wifi->get_cache();
+                $wifi = new wifi();
 
-if ($cached != '') {
-    echo "<h3>Saved Connection: $cached </h3>";
-}
-if ($_GET['error'] == 1) {
-    echo '<span>Connection failed, try again</span>';
-}
-?>
-<form action='api/wifi.php' method='POST'>
-    <input type='text' name='ssid'>
-    <!--<select name='ssid'>
+                $cached = $wifi->get_cache();
+
+                if ($cached != '') {
+                    echo "<h3>Saved Connection: $cached </h3>";
+                }
+                if ($_GET['error'] == 1) {
+                    echo '<span>Connection failed, try again</span>';
+                }
+                ?>
+
+            </div>
+            <form action='api/wifi.php' method='POST'>
+                <input type='text' name='ssid'>
+                <!--<select name='ssid'>
         <?php
 
 
@@ -29,6 +41,9 @@ if ($_GET['error'] == 1) {
 
         ?>
     </select>-->
-    <input type='password' name='password'>
-    <button>Connect</button>
-</form>
+                <input type='password' name='password'>
+                <button>Connect</button>
+            </form>
+        </div>
+    </center>
+</body>

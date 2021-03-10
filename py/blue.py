@@ -1,5 +1,4 @@
 import sys
-import bluetooth
 from paos_iot import blue
 
 blue_cli = blue()

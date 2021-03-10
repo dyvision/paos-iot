@@ -106,7 +106,7 @@ class commands:
 class blue:
     def get(self):
         nearby_devices = bluetooth.discover_devices(lookup_names=True)
-        return nearby_devices
+        return json.dumps(nearby_devices)
 
     def set(self, device):
         return

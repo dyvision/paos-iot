@@ -9,7 +9,7 @@
         <div class='card'>
             <img width='100%' height='auto' src='style/connection.png'>
             <div class='card-body'>
-                <h1>Connect to blue</h1>
+                <h1>Connect your bluetooth controller</h1>
                 <?php
                 include('lib/paos-iot.php');
 
@@ -21,8 +21,7 @@
 
             </div>
             <form action='api/blue.php' method='POST'>
-                <input type='text' name='ssid' placeholder="ssid">
-                <select name='ssid'>
+                <select name='device'>
         <?php
 
 
@@ -34,8 +33,6 @@
 
         ?>
     </select>
-                <input type='password' name='password' placeholder="password">
-                <?php echo $list; ?>
                 <button>Connect</button>
             </form>
         </div>

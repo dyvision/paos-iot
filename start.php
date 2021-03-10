@@ -17,21 +17,21 @@ include('lib/paos-iot.php');
         <div class='card'>
             <img width='100%' height='auto' src='style/paos.png'>
             <div class='card-body'>
-                <h1 style='font-size: 8vw;'>Welcome to PAOS</h1>
+                <h1 style='font-size: 2vw;'>Welcome to PAOS</h1>
                 <?php
                 $opcli = new settings();
                 if (json_decode($opcli->get(), true)['wifi'] == true) {
                 ?>
-                    <span style='font-size: 4vw;'>Launch a Parsec session using your phone.</span>
-                    <span style='font-size:4vw;'>Scan the barcode above or navigate to https://api.paos.io to access the dashboard</span></br></br>
+                    <span style='font-size: 1vw;'>Launch a Parsec session using your phone.</span>
+                    <span style='font-size:1vw;'>Scan the barcode above or navigate to https://api.paos.io to access the dashboard</span></br></br>
                     <center>
                         <img width='25%' src='style/qr-code.png'>
                     </center>
                 <?php
                 } else {
                 ?>
-                    <span style='font-size: 4vw;'>Configure your PAOS Device using your phone.</span>
-                    <span style='font-size:4vw;'>Scan the barcode above or navigate to https://api.paos.io to access the dashboard</span></br></br>
+                    <span style='font-size: 1vw;'>Configure your PAOS Device using your phone.</span>
+                    <span style='font-size:1vw;'>Scan the barcode above or navigate to https://api.paos.io to access the dashboard</span></br></br>
                     <center>
                         <img width='25%' src='style/qr-code.png'>
                     </center>

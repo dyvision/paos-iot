@@ -5,7 +5,7 @@
 
 <body>
     <center>
-        <div class='exit'><a href='main.php'>X</a></div>
+        <div class='exit'><a href='home.php'>X</a></div>
         <div class='card'>
             <img width='100%' height='auto' src='style/connection.png'>
             <div class='card-body'>

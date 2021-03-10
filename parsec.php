@@ -6,7 +6,7 @@
 
 <body>
     <center>
-        <div class='exit'><a href='main.php'>X</a></div>
+        <div class='exit'><a href='home.php'>X</a></div>
         <div class='card'>
             <img width='100%' height='auto' src='https://parsec.app/static/opengraph-1a87b526f2a0a7c39d89fd5f3444b947.png'>
             <div class='card-body'>

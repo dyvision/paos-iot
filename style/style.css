@@ -49,6 +49,14 @@ button{
     color:white;
     font-size:14px;
 }
+menuitem{
+    padding:10px;
+    background: transparent;
+    font-weight: 400;
+    border-style:solid;
+    color:white;
+    font-size:14px;
+}
 span{
     display: block;
     margin-bottom:10px;

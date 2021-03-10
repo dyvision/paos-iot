@@ -10,13 +10,17 @@
             <img width='100%' height='auto' src='style/connection.png'>
             <div class='card-body'>
                 <h1>Connect your bluetooth controller</h1>
+                <h2>Current Devices:</h2>
                 <?php
                 include('lib/paos-iot.php');
 
                 use paos_iot\blue;
 
                 $blue = new blue();
-
+                $current = json_decode($blue->current(), true);
+                foreach ($current as $device) {
+                    echo "<span>".$device['name']."<a href='api/blue.php?mac=".$device['mac']."'> X</a></span>";
+                }
                 ?>
 
             </div>

@@ -187,6 +187,9 @@ namespace paos_iot {
         function get(){
             return shell_exec(python . ' ' . py_path . 'blue.py');
         }
+        function current(){
+            return shell_exec(python . ' ' . py_path . 'blue.py current');
+        }
         function set($device){
             return shell_exec('sudo -H -u parsec bash -c \'sudo '.python . ' ' . py_path . 'blue.py connect '.$device.'\'');
         }

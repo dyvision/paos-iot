@@ -1,5 +1,7 @@
 <?php
-ini_set('display_errors', 1); ini_set('display_startup_errors', 1); error_reporting(E_ALL); 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 include('/var/www/html/paos-iot/lib/paos-iot.php');
 
 use paos_iot\blue;
@@ -9,18 +11,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($post == null) {
         $post = $_POST;
         $blue = new blue();
-        if (json_decode($blue->set($post['device']),true)['message'] == 'success') {
+        if (json_decode($blue->set($post['device']), true)['message'] == 'success') {
             header('location: ../bluetooth.php');
         } else {
             header('location: ../bluetooth.php');
         }
     } else {
         $blue = new blue();
-        if (json_decode($blue->set($post['device']),true)['message'] == 'success') {
+        if (json_decode($blue->set($post['device']), true)['message'] == 'success') {
             $response['message'] = 'connected';
         } else {
             $response['message'] = 'could not connect';
         }
         print_r(json_encode($response));
     }
+} elseif ($_SERVER['REQUEST_METHOD'] == 'GET') {
+    $blue = new blue();
+    if ($blue->delete($_GET['mac'])) {
+        $response['message'] = 'removed';
+    } else {
+        $response['message'] = 'could not remove';
+    }
+    print_r(json_encode($response));
 }

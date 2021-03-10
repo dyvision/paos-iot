@@ -113,4 +113,5 @@ class blue:
         return
     def delete_device(self,device):
         os.popen('echo -e "disconnect '+device+'" | bluetoothctl')
+        os.popen('echo -e "remove '+device+'" | bluetoothctl')
         return

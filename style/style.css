@@ -64,6 +64,17 @@ input{
     padding:5px;
     font-size:14px;
 }
+select{
+    display: block;
+    margin-bottom: 10px;
+    background: transparent;
+    border-style: solid;
+    border-color: grey;
+    color:white;
+    width:50%;
+    padding:5px;
+    font-size:14px;
+}
 @media (max-width: 800px) {
     .card{
         width: 95%;

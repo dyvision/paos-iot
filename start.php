@@ -13,7 +13,7 @@ include('lib/paos-iot.php');
 <body>
     <center>
         <div class='card'>
-            <img width='100%' height='auto' src='style/qr-code.png'>
+            <img width='100%' height='auto' src='style/paos.png'>
             <div class='card-body'>
                 <h1>Welcome to PAOS</h1>
                 <?php
@@ -22,12 +22,17 @@ include('lib/paos-iot.php');
                 ?>
                     <span>Launch a Parsec session using your phone.</span>
                     <span>Scan the barcode above or navigate to https://api.paos.io to access the dashboard</span>
+                    <center>
+                        <img width='50%' src='style/qr-code.png'>
+                    </center>
                 <?php
                 } else {
                 ?>
                     <span>Configure your PAOS Device using your phone.</span>
                     <span>Scan the barcode above or navigate to https://api.paos.io to access the dashboard</span>
-                    
+                    <center>
+                        <img width='50%' src='style/qr-code.png'>
+                    </center>
                 <?php
                 }
 

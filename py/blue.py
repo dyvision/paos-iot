@@ -18,4 +18,5 @@ try:
     s.connect((device,1))
 except bluetooth.btcommon.BluetoothError as err:
     # Error handler
+    print(err)
     pass

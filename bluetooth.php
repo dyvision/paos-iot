@@ -8,7 +8,7 @@
         <div class='exit'><a href='home.php'>X</a></div>
         <div class='card'>
             <img width='100%' height='auto' src='style/connection.png'>
-            <div class='card-body'>
+            <div style='overflow-y:scroll'class='card-body'>
                 <h1>Connect your bluetooth controller</h1>
                 <h2>Current Devices:</h2>
                 <?php
@@ -19,7 +19,7 @@
                 $blue = new blue();
                 $current = json_decode($blue->current(), true);
                 foreach ($current as $device) {
-                    echo "<span>".$device['name']."<a href='api/blue.php?mac=".$device['mac']."'> X</a></span>";
+                    echo "<span>".$device['name']."<a style='color:red' href='api/blue.php?mac=".$device['mac']."'> X</a></span>";
                 }
                 ?>
 

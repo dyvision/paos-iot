@@ -28,7 +28,7 @@
 
             </div>
             <form action='api/wifi.php' method='POST'>
-                <input type='text' name='ssid'>
+                <input type='text' name='ssid' placeholder="ssid">
                 <!--<select name='ssid'>
         <?php
 
@@ -41,7 +41,7 @@
 
         ?>
     </select>-->
-                <input type='password' name='password'>
+                <input type='password' name='password' placeholder="password">
                 <button>Connect</button>
             </form>
         </div>

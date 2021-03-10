@@ -17,7 +17,7 @@ include('lib/paos-iot.php');
         <div class='card'>
             <img width='100%' height='auto' src='style/paos.png'>
             <div class='card-body'>
-                <h1>Welcome to PAOS</h1>
+                <h1 style='font-size: 8vw;'>Welcome to PAOS</h1>
                 <?php
                 $opcli = new settings();
                 if (json_decode($opcli->get(), true)['wifi'] == true) {

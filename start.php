@@ -22,16 +22,16 @@ include('lib/paos-iot.php');
                 $opcli = new settings();
                 if (json_decode($opcli->get(), true)['wifi'] == true) {
                 ?>
-                    <span>Launch a Parsec session using your phone.</span>
-                    <span>Scan the barcode above or navigate to https://api.paos.io to access the dashboard</span></br></br>
+                    <span style='font-size: 4vw;'>Launch a Parsec session using your phone.</span>
+                    <span style='font-size:4vw;'>Scan the barcode above or navigate to https://api.paos.io to access the dashboard</span></br></br>
                     <center>
                         <img width='25%' src='style/qr-code.png'>
                     </center>
                 <?php
                 } else {
                 ?>
-                    <span>Configure your PAOS Device using your phone.</span>
-                    <span>Scan the barcode above or navigate to https://api.paos.io to access the dashboard</span></br></br>
+                    <span style='font-size: 4vw;'>Configure your PAOS Device using your phone.</span>
+                    <span style='font-size:4vw;'>Scan the barcode above or navigate to https://api.paos.io to access the dashboard</span></br></br>
                     <center>
                         <img width='25%' src='style/qr-code.png'>
                     </center>

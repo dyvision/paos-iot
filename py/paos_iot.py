@@ -8,6 +8,7 @@ import os
 import time
 import alsaaudio
 import math
+import bluetooth
 from subprocess import call
 from wireless import Wireless
 
@@ -31,7 +32,6 @@ class wifi:
         s = ssid
         p = password
 
-        
         wireless = Wireless()
         wireless
         testwifi = wireless.connect(ssid=s, password=p)
@@ -46,7 +46,8 @@ class wifi:
 class audio:
     def get_device(self):
         device_list = []
-        shelllist = os.popen('pacmd list-cards | grep -E "output:" | grep -E ":analog-stereo"').read().splitlines()
+        shelllist = os.popen(
+            'pacmd list-cards | grep -E "output:" | grep -E ":analog-stereo"').read().splitlines()
         active_device = shelllist[-1]
         del(shelllist[-1])
         del(shelllist[0])
@@ -55,9 +56,10 @@ class audio:
             stringarray = device.split(':')
             new_device = stringarray[0]+':'+stringarray[1]+':'+stringarray[2]
             device_list.append(new_device.strip())
-            
-        current_device = active_device.split(':',1)
-        result = {'active_device':current_device[1],"available_devices":device_list}
+
+        current_device = active_device.split(':', 1)
+        result = {
+            'active_device': current_device[1], "available_devices": device_list}
 
         return json.dumps(result)
 
@@ -94,6 +96,21 @@ class commands:
     def kill_session(self):
         os.popen('sudo pkill parsec')
         return
-    def launch_session(self,session_id,peer_id):
-        os.popen("export DISPLAY=:0;sudo parsecd session_id="+session_id+":peer_id="+peer_id+":client_overlay=0:client_immersive=0:client_vsync=1");
+
+    def launch_session(self, session_id, peer_id):
+        os.popen("export DISPLAY=:0;sudo parsecd session_id="+session_id +
+                 ":peer_id="+peer_id+":client_overlay=0:client_immersive=0:client_vsync=1")
+        return
+
+
+class bluez:
+    def get(self):
+        nearby_devices = bluetooth.discover_devices(lookup_names=True)
+        print("Found {} devices.".format(len(nearby_devices)))
+
+        for addr, name in nearby_devices:
+            print("  {} - {}".format(addr, name))
+        return
+
+    def set(self, device):
         return

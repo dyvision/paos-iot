@@ -14,4 +14,4 @@ try:
     else:
         print(blue_cli.delete_device(sys.argv[2]))
 except:
-    return
+    print('error')

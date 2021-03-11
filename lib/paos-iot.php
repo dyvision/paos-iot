@@ -139,7 +139,7 @@ namespace paos_iot {
         }
         function set_volume($direction, $value)
         {
-            shell_exec(python . ' ' . py_path . 'audio.py volume ' . $direction . ' ' . $value);
+            shell_exec('sudo -H -u parsec bash -c \'sudo '.python . ' ' . py_path . 'audio.py volume ' . $direction . ' ' . $value.'\'');
             return;
         }
         function get_device()
@@ -172,15 +172,6 @@ namespace paos_iot {
         function __construct()
         {
             return;
-        }
-        function get()
-        {
-        }
-        function device_get()
-        {
-        }
-        function device_set()
-        {
         }
         function get_resolution($type = null){
             $result = ['720p'=>'1280x720','1080p'=>'1920x1080','2k'=>'2560x1440','4k'=>'3840x2160'];

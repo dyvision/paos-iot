@@ -6,11 +6,11 @@ set address [lindex $argv 0]
 spawn sudo bluetoothctl
 expect -re $prompt
 send "remove $address\r"
-sleep 1
+sleep 2
 expect -re $prompt
 send "scan on\r"
-sleep 5
 send_user "\nSleeping\r"
+sleep 5
 send_user "\nDone sleeping\r"
 expect "Controller"
 send "trust $address\r"

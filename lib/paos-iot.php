@@ -157,7 +157,7 @@ namespace paos_iot {
                 'internal'=>'output:analog-stereo+input:analog-stereo',
                 'hdmi'=>'output:hdmi-stereo-extra1'
             ];
-            exec('export DISPLAY=:0;pactl set-card-profile 0 output:analog-stereo+input:analog-stereo');
+            exec('export DISPLAY=:0;pactl set-card-profile 0 '.$audio_device[$device]);
             return;
         }
         function save($device)

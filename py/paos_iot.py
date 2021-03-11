@@ -124,6 +124,7 @@ class blue:
                 'mac' : items[1].strip().replace('(','').replace(')','')
             }
             devices.append(obj)
+        os.system('echo "scan on | bluetoothctl;')
         return json.dumps(devices)
 
     def set(self, device):

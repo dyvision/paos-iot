@@ -128,7 +128,7 @@ class blue:
         return json.dumps(devices)
 
     def set(self, device):
-        result = os.system('echo "pair '+device+'" | bluetoothctl; sleep 10; echo "trust '+device+'" | bluetoothctl;echo "connect '+device+'" | bluetoothctl').read()
+        result = os.system('echo "scan on | bluetoothctl;sleep 5;pair '+device+'" | bluetoothctl; sleep 10; echo "trust '+device+'" | bluetoothctl;echo "connect '+device+'" | bluetoothctl').read()
         return result
     def delete_device(self,device):
         os.system('echo "remove '+device+'" | bluetoothctl')

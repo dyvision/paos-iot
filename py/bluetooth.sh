@@ -17,7 +17,7 @@ expect "Controller"
 send "trust $address\r"
 sleep 2
 send "pair $address\r"
-sleep 2
+sleep 3
 send "connect $address\r"
 sleep 2
 send "0000\r"

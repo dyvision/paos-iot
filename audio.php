@@ -34,5 +34,5 @@ if ($cached != '') {
 </form>
 <?php print_r($audio->get_device())?>
 <h3>Volume</h3>
-<button onclick="set_volume('up',1);">+</button>
-<button onclick="set_volume('down',1);">-</button>
+<button onclick="set_volume('up',10);">+</button>
+<button onclick="set_volume('down',10);">-</button>

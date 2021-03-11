@@ -194,7 +194,7 @@ namespace paos_iot {
             return shell_exec(python . ' ' . py_path . 'blue.py current');
         }
         function set($device){
-            return shell_exec(python . ' ' . py_path . 'blue.py connect '.$device);
+            return shell_exec(py_path . 'bluetooth.sh '.$device);
         }
         function delete($device){
             return shell_exec(python . ' ' . py_path . 'blue.py disconnect '.$device);

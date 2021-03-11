@@ -25,7 +25,7 @@ include('lib/paos-iot.php');
                     <span style='font-size: 1vw;'>Launch a Parsec session using your phone.</span>
                     <span style='font-size:1vw;'>Scan the barcode above or navigate to https://api.paos.io to access the dashboard</span></br></br>
                     <center>
-                        <img width='25%' src='style/qr-code.png'>
+                        <img style='margin:8px' width='25%' src='style/qr-code.png'>
                     </center>
                 <?php
                 } else {

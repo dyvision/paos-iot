@@ -154,7 +154,7 @@ namespace paos_iot {
             } else {
                 $direct = '-';
             }
-            shell_exec('amixer -c 0 set Speaker 1db' . $direct);
+            shell_exec('amixer -c 0 set Master 10%' . $direct);
             return;
         }
         function get_device()

@@ -34,9 +34,11 @@
 
 
             ?>
-            <h3>Volume</h3>
+            
+            <!--<h3>Volume</h3>
+
             <a class='menuitem' type='button' onclick="set_volume('up');">+</a>
-                <a class='menuitem' type='button' onclick="set_volume('down');">-</a>
+                <a class='menuitem' type='button' onclick="set_volume('down');">-</a>-->
         </div>
     </center>
 </body>

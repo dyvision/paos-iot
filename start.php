@@ -31,9 +31,9 @@ include('lib/paos-iot.php');
                 } else {
                 ?>
                     <span style='font-size: 1vw;'>Configure your PAOS Device using your phone.</span>
-                    <span style='font-size:1vw;'>Scan the barcode above or navigate to https://api.paos.io to access the dashboard</span></br></br>
+                    <span style='font-size:1vw;'>Scan the barcode above or navigate to https://api.paos.io to access the dashboard</span>
                     <center>
-                        <img width='25%' src='style/qr-code.png'>
+                        <img style='margin:8px' width='25%' src='style/qr-code.png'>
                     </center>
                     <span style='font-size:1vw;color:grey'><?php echo 'Version: '.json_decode(file_get_contents('version/version.json'),true)['version']; ?></span></br></br>
                     

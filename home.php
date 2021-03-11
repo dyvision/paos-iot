@@ -17,6 +17,7 @@
                 <a class='menuitem' href='wifi.php'>WiFi</a>
                 <a id='blue' class='menuitem' href='bluetooth.php' onclick='document.getElementById("blue").innerHTML = "Bluetooth - Scanning"'>Bluetooth</a>
                 <a class='menuitem' href='display.php'>Display</a>
+                <a class='menuitem' href='audio.php'>Audio</a>
                 <a class='menuitem' href='api/update.php'>Update</a>
             </div>
     </center>

@@ -9,8 +9,8 @@ include('lib/paos-iot.php');
     <title>Parsec Arcade OS | Start</title>
     <link href='style/style.css' rel='stylesheet'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Helvetica">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica">
+    <link rel='shortcut icon' type='image/png' href='style/paoslogo.png' />
 </head>
 
 <body>
@@ -28,8 +28,8 @@ include('lib/paos-iot.php');
                     <center>
                         <img style='margin:8px' width='20%' src='style/qr-code.png'>
                     </center>
-                    <span style='position:absolute;float:left;bottom:0;font-size:1vw;color:grey'><?php echo 'Version: '.json_decode(file_get_contents('version/version.json'),true)['version']; ?></span></br></br>
-                    
+                    <span style='position:absolute;float:left;bottom:0;font-size:1vw;color:grey'><?php echo 'Version: ' . json_decode(file_get_contents('version/version.json'), true)['version']; ?></span></br></br>
+
                 <?php
                 } else {
                 ?>
@@ -38,8 +38,8 @@ include('lib/paos-iot.php');
                     <center>
                         <img style='margin:8px' width='20%' src='style/qr-code.png'>
                     </center>
-                    <span style='position:absolute;float:left;bottom:0;font-size:1vw;color:grey'><?php echo 'Version: '.json_decode(file_get_contents('version/version.json'),true)['version']; ?></span></br></br>
-                    
+                    <span style='position:absolute;float:left;bottom:0;font-size:1vw;color:grey'><?php echo 'Version: ' . json_decode(file_get_contents('version/version.json'), true)['version']; ?></span></br></br>
+
                 <?php
                 }
 

@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $post = $_POST;
     }
     $audio = new audio();
-    $push = json_decode($audio->set_volume($post['direction'], $post['value']), true);
+    $push = json_decode($audio->set_volume($post['direction']), true);
     if ($push) {
         $response['message'] = 'success';
     } else {

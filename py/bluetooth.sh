@@ -18,11 +18,9 @@ expect "Controller"
 send "trust $address\r"
 sleep 2
 send "pair $address\r"
-sleep 3
+sleep 5
 send "connect $address\r"
 sleep 2
-send "0000\r"
-sleep 3
 send_user "\nShould be paired now.\r"
 send "quit\r"
 expect eof

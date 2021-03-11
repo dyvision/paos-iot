@@ -12,26 +12,26 @@
             <img width='100%' height='auto' src='style/connection.png'>
             <div class='card-body'>
                 <h1>Connect your bluetooth controller</h1>
-                <div style='overflow-y:scroll;height:200px'>
-                    <span>Current Devices:</span>
-                    <form action='api/blue.php' method='POST'>
-                        <select name='mac'>
-                            <?php
-                            include('lib/paos-iot.php');
-
-                            use paos_iot\blue;
-
-                            $blue = new blue();
-                            $current = json_decode($blue->current(), true);
-                            foreach ($current as $device) {
-                                echo "<option value='".$device['mac'] ."'>" . $device['name'] . "</option>";
-                            }
-                            ?>
-                        </select>
-                        <button>Remove</button>
-                    </form>
-                </div>
             </div>
+            <span>Current Devices:</span>
+
+            <form action='api/blue.php' method='POST'>
+                <select name='mac'>
+                    <?php
+                    include('lib/paos-iot.php');
+
+                    use paos_iot\blue;
+
+                    $blue = new blue();
+                    $current = json_decode($blue->current(), true);
+                    foreach ($current as $device) {
+                        echo "<option value='" . $device['mac'] . "'>" . $device['name'] . "</option>";
+                    }
+                    ?>
+                </select>
+                <button>Remove</button>
+            </form>
+
             <form action='api/blue.php' method='POST'>
                 <select name='device'>
                     <?php

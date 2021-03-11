@@ -76,7 +76,7 @@ class audio:
 
         am = alsaaudio.Mixer()
         current_volume = am.getvolume()
-        new_volume = min(current_volume[0] + direct, 100)
+        new_volume = min(current_volume[0]) + direct
         am.setvolume(new_volume)
         return new_volume
 

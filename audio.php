@@ -1,5 +1,5 @@
 <head>
-    <title>audio Arcade OS | audio</title>
+    <title>audio Arcade OS | Audio</title>
     <script src='lib/paos_iot.js'></script>
     <link href='style/style.css' rel='stylesheet'>
     <link rel='shortcut icon' type='image/png' href='style/paoslogo.png' />
@@ -35,8 +35,8 @@
 
             ?>
             <h3>Volume</h3>
-            <a class='menuitem' type='button' onclick="set_volume('up');">+</button>
-                <a class='menuitem' type='button' onclick="set_volume('down');">-</button>
+            <a class='menuitem' type='button' onclick="set_volume('up');">+</a>
+                <a class='menuitem' type='button' onclick="set_volume('down');">-</a>
         </div>
     </center>
 </body>

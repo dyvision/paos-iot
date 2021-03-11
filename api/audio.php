@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $audio = new audio();
         $json = $audio->set_device($post['device']);
         print_r($json);
-        if ($json) {
+        if ($json == true) {
             $response['message'] = 'device changed to ' . $post['device'];
         } else {
             $response['message'] = 'could not connect';

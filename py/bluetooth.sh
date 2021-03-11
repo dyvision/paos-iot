@@ -3,7 +3,7 @@
 set prompt "#"
 set address [lindex $argv 0]
 
-spawn sudo bluetoothctl -a
+spawn sudo bluetoothctl
 expect -re $prompt
 send "remove $address\r"
 sleep 1

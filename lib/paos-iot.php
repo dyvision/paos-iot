@@ -153,7 +153,7 @@ namespace paos_iot {
         }
         function set_device($device)
         {
-            $out = shell_exec('pacmd set-card-profile 0 ' . $device);
+            $out = shell_exec('pactl set-card-profile 0 ' . $device);
             return $out;
         }
         function save($device)

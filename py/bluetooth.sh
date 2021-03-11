@@ -10,7 +10,7 @@ sleep 1
 expect -re $prompt
 send "scan on\r"
 send_user "\nSleeping\r"
-sleep 8
+sleep 10
 send_user "\nDone sleeping\r"
 send "scan off\r"
 sleep 1

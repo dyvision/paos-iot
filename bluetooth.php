@@ -17,7 +17,7 @@
             </div>
             <span>Current Devices:</span>
 
-            <form action='api/blue.php' method='POST'>
+            <form action='api/blue.php' method='GET'>
                 <select name='mac'>
                     <?php
                     include('lib/paos-iot.php');

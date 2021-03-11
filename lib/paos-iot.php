@@ -1,6 +1,9 @@
 <?php
 
 namespace paos_iot {
+
+    use Exception;
+
     //path constants
     const config_path = '/var/www/html/paos-iot/config.json';
     const session_path = '/var/www/html/paos-iot/session.json';
@@ -56,11 +59,11 @@ namespace paos_iot {
             fwrite($file, json_encode($session));
             fclose($file);
         }
-        function launch($session_id,$peer_id)
+        function launch($session_id, $peer_id)
         {
-            return shell_exec('sudo -H -u parsec bash -c \'export DISPLAY=:0;sudo parsecd session_id='.$session_id.':peer_id='.$peer_id.':client_overlay=0:client_immersive=0:client_vsync=1\' > /dev/null 2>/dev/null &');
+            return shell_exec('sudo -H -u parsec bash -c \'export DISPLAY=:0;sudo parsecd session_id=' . $session_id . ':peer_id=' . $peer_id . ':client_overlay=0:client_immersive=0:client_vsync=1\' > /dev/null 2>/dev/null &');
         }
-        function get($id,$guid)
+        function get($id, $guid)
         {
             //create auth header
             $context = stream_context_create([
@@ -79,10 +82,11 @@ namespace paos_iot {
         {
             return shell_exec('sudo -H -u parsec bash -c \'sudo pkill parsec\'');
         }
-        function update(){
+        function update()
+        {
             shell_exec('git reset --hard HEAD');
             shell_exec('git pull');
-            shell_exec('chmod +x -R '.py_path.'*');
+            shell_exec('chmod +x -R ' . py_path . '*');
             return;
         }
     }
@@ -114,7 +118,7 @@ namespace paos_iot {
         }
         function connect($ssid, $password)
         {
-            $result = shell_exec('sudo -H -u parsec bash -c \'sudo '.python . ' ' . py_path . 'wifi.py ' . $ssid . ' ' . $password.'\'');
+            $result = shell_exec('sudo -H -u parsec bash -c \'sudo ' . python . ' ' . py_path . 'wifi.py ' . $ssid . ' ' . $password . '\'');
             shell_exec('sudo dhclient');
             return $result;
         }
@@ -139,12 +143,12 @@ namespace paos_iot {
         }
         function set_volume($direction)
         {
-            if($direction == 'up'){
+            if ($direction == 'up') {
                 $direct = '+';
             } else {
                 $direct = '-';
             }
-            shell_exec('amixer -c 0 set Speaker 1db'.$direct);
+            shell_exec('amixer -c 0 set Speaker 1db' . $direct);
             return;
         }
         function get_device()
@@ -154,11 +158,15 @@ namespace paos_iot {
         function set_device($device)
         {
             $audio_device = [
-                'internal'=>'output:analog-stereo+input:analog-stereo',
-                'hdmi'=>'output:hdmi-stereo-extra1'
+                'internal' => 'output:analog-stereo+input:analog-stereo',
+                'hdmi' => 'output:hdmi-stereo-extra1'
             ];
-            exec('export DISPLAY=:0;pactl set-card-profile 0 '.$audio_device[$device]);
-            return;
+            try {
+                exec('export DISPLAY=:0;pactl set-card-profile 0 ' . $audio_device[$device]);
+                return true;
+            } catch (Exception $e) {
+                return $e->getMessage();
+            }
         }
         function save($device)
         {
@@ -182,30 +190,37 @@ namespace paos_iot {
         {
             return;
         }
-        function get_resolution($type = null){
-            $result = ['720p'=>'1280x720','1080p'=>'1920x1080','2k'=>'2560x1440','4k'=>'3840x2160'];
+        function get_resolution($type = null)
+        {
+            $result = ['720p' => '1280x720', '1080p' => '1920x1080', '2k' => '2560x1440', '4k' => '3840x2160'];
             return json_encode($result);
         }
         function set_resolution($size)
         {
-            return shell_exec('export DISPLAY=:0;xrandr -s '.$size);
+            return shell_exec('export DISPLAY=:0;xrandr -s ' . $size);
         }
     }
-    class blue{
-        function __construct(){
+    class blue
+    {
+        function __construct()
+        {
             return;
         }
-        function get(){
+        function get()
+        {
             return shell_exec(python . ' ' . py_path . 'blue.py scan');
         }
-        function current(){
+        function current()
+        {
             return shell_exec(python . ' ' . py_path . 'blue.py current');
         }
-        function set($device){
-            return shell_exec(py_path . 'bluetooth.sh '.$device);
+        function set($device)
+        {
+            return shell_exec(py_path . 'bluetooth.sh ' . $device);
         }
-        function delete($device){
-            return shell_exec(python . ' ' . py_path . 'blue.py disconnect '.$device);
+        function delete($device)
+        {
+            return shell_exec(python . ' ' . py_path . 'blue.py disconnect ' . $device);
         }
     }
 }

@@ -25,7 +25,7 @@ include('lib/paos-iot.php');
                     <span style='font-size: 1vw;'>Launch a Parsec session using your phone.</span>
                     <span style='font-size:1vw;'>Scan the barcode below or navigate to https://api.paos.io to access the dashboard</span>
                     <center>
-                        <img style='margin:8px' width='25%' src='style/qr-code.png'>
+                        <img style='margin:8px' width='20%' src='style/qr-code.png'>
                     </center>
                     <span style='font-size:1vw;color:grey'><?php echo 'Version: '.json_decode(file_get_contents('version/version.json'),true)['version']; ?></span></br></br>
                     
@@ -35,7 +35,7 @@ include('lib/paos-iot.php');
                     <span style='font-size: 1vw;'>Configure your PAOS Device using your phone.</span>
                     <span style='font-size:1vw;'>Scan the barcode below or navigate to https://api.paos.io to access the dashboard</span>
                     <center>
-                        <img style='margin:8px' width='25%' src='style/qr-code.png'>
+                        <img style='margin:8px' width='20%' src='style/qr-code.png'>
                     </center>
                     <span style='font-size:1vw;color:grey'><?php echo 'Version: '.json_decode(file_get_contents('version/version.json'),true)['version']; ?></span></br></br>
                     

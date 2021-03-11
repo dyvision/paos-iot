@@ -124,11 +124,10 @@ class blue:
                 'mac' : items[1].strip().replace('(','').replace(')','')
             }
             devices.append(obj)
-        os.system('echo "scan on" | bluetoothctl;')
         return json.dumps(devices)
 
     def set(self, device):
-        result = os.system('echo "scan on" | bluetoothctl;sleep 5;echo "pair '+device+'" | bluetoothctl; sleep 10; echo "trust '+device+'" | bluetoothctl;echo "connect '+device+'" | bluetoothctl').read()
+        result = os.system('set prompt "#";set address '+device+';spawn sudo bluetoothctl -a;expect -re $prompt;send "remove $address\r";sleep 1;expect -re $prompt;send "scan on\r";send_user "\nSleeping\r";sleep 5;send_user "\nDone sleeping\r";send "scan off\r";expect "Controller";send "trust $address\r";sleep 2;send "pair $address\r";sleep 2;send "0000\r";sleep 3;send_user "\nShould be paired now.\r";send "quit\r";expect eof;').read()
         return result
     def delete_device(self,device):
         os.system('echo "remove '+device+'" | bluetoothctl')

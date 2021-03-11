@@ -103,7 +103,7 @@ class commands:
         return
     
     def update(self):
-        os.popen('git reset --hard HEAD;git pull;chmod +x -R *')
+        os.popen('git reset --hard HEAD;git pull;sudo chmod +x -R *')
         return
 
 

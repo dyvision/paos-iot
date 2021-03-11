@@ -1,37 +1,42 @@
 <head>
+    <title>audio Arcade OS | audio</title>
     <script src='lib/paos_iot.js'></script>
+    <link href='style/style.css' rel='stylesheet'>
+    <link rel='shortcut icon' type='image/png' href='style/paoslogo.png' />
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
 </head>
-<h1>Configure Audio</h1>
-<?php
-//ini_set('display_errors', 1); ini_set('display_startup_errors', 1); error_reporting(E_ALL); 
-include('lib/paos-iot.php');
 
-use paos_iot\audio;
+<body>
+    <center>
+        <a href='home.php'>
+            <div class='exit'>X</div>
+        </a>
+        <div class='card'>
+            <img width='100%' height='auto' src='style/connection.png'>
+            <div class='card-body'>
+                <h1>Audio Controls</h1>
+                <?php
+                //ini_set('audio_errors', 1); ini_set('audio_startup_errors', 1); error_reporting(E_ALL); 
+                include('lib/paos-iot.php');
 
-$audio = new audio();
+                use paos_iot\audio;
 
-$cached = $audio->get_cache();
-
-if ($cached != '') {
-    echo "<h3>Default Device: $cached </h3>";
-}
-?>
-
-<form action='api/audio.php' method='POST'>
-    <select name='device'>
-        <?php
-
-
-        $list = json_decode($audio->get_device(), true);
-        foreach ($list['available_devices'] as $device) {
-           echo "<option value='$device'>$device</option>";
-        }
+                $audio = new audio();
+                ?>
+            </div>
+            <?php
 
 
-        ?>
-    </select>
-    <button>Change Device</button>
-</form>
-<h3>Volume</h3>
-<button type='button' onclick="set_volume('up');">+</button>
-<button type='button' onclick="set_volume('down');">-</button>
+            $list = json_decode($audio->get_device(), true);
+            foreach ($list as $name => $value) {
+                echo "<a class='menuitem' href='api/audio.php?device=" . $value  . "'>" . $name . "</a>";
+            }
+
+
+            ?>
+            <h3>Volume</h3>
+            <a class='menuitem' type='button' onclick="set_volume('up');">+</button>
+                <a class='menuitem' type='button' onclick="set_volume('down');">-</button>
+        </div>
+    </center>
+</body>

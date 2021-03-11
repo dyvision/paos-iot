@@ -6,27 +6,13 @@ include('/var/www/html/paos-iot/lib/paos-iot.php');
 
 use paos_iot\audio;
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $post = json_decode(file_get_contents('php://input'), true);
-    if ($post == null) {
-        $post = $_POST;
-        $audio = new audio();
-        if (json_decode($audio->set_device($post['device']), true)) {
-            #$audio->save($post['device']);
-            header('location: ../audio.php');
-        } else {
-            header('location: ../audio.php?error=1');
-        }
+if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+    $audio = new audio();
+    if (json_decode($audio->set_device($_GET['device']), true)) {
+        #$audio->save($post['device']);
+        header('location: ../audio.php');
     } else {
-        $audio = new audio();
-        $json = $audio->set_device($post['device']);
-        print_r($json);
-        if ($json == true) {
-            $response['message'] = 'device changed to ' . $post['device'];
-        } else {
-            $response['message'] = 'could not connect';
-        }
-        print_r(json_encode($response));
+        header('location: ../audio.php?error=1');
     }
 } elseif ($_SERVER['REQUEST_METHOD'] == 'PUT') {
     $post = json_decode(file_get_contents('php://input'), true);

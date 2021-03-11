@@ -137,8 +137,14 @@ namespace paos_iot {
     }
     class audio //done
     {
+        public $profiles;
+
         function __construct()
         {
+            $this->profiles = [
+                'internal' => 'output:analog-stereo+input:analog-stereo',
+                'hdmi' => 'output:hdmi-stereo-extra1'
+            ];
             return;
         }
         function set_volume($direction)
@@ -153,16 +159,13 @@ namespace paos_iot {
         }
         function get_device()
         {
-            return shell_exec(python . ' ' . py_path . 'audio.py scan');
+            return json_encode($this->profiles);
         }
         function set_device($device)
         {
-            $audio_device = [
-                'internal' => 'output:analog-stereo+input:analog-stereo',
-                'hdmi' => 'output:hdmi-stereo-extra1'
-            ];
+            
             try {
-                exec('pactl --server "unix:/run/user/$(id -u)/pulse/native" set-card-profile 0 ' . $audio_device[$device]);
+                exec('pactl --server "unix:/run/user/$(id -u)/pulse/native" set-card-profile 0 ' . $this->profiles[$device]);
                 return true;
             } catch (Exception $e) {
                 return $e->getMessage();

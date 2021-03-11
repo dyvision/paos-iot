@@ -26,14 +26,17 @@ body{
     text-align: left;
 }
 .exit{
-    font-size:42px;
-    font-weight:700;
-    color:rgb(255, 98, 242);
+    font-size: 42px;
+    font-weight: 700;
+    color: #feb8ff;
     position: fixed;
-    top:0;
-    left:0;
+    top: 5px;
+    left: 5px;
     z-index: 1;
-    font-size: 20px;
+    font-size: 50px;
+    background: rgb(41, 41, 41);
+    padding: 0px 10px 0px 10px;
+    box-shadow: 2px 4px 8px #00000075;
 }
 a{
     color:white;

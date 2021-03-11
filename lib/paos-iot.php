@@ -148,8 +148,8 @@ namespace paos_iot {
         }
         function set_device($device)
         {
-            shell_exec('pacmd set-card-profile 0 ' . $device);
-            return;
+            $out = shell_exec('pacmd set-card-profile 0 ' . $device);
+            return $out;
         }
         function save($device)
         {

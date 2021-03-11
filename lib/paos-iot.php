@@ -153,7 +153,11 @@ namespace paos_iot {
         }
         function set_device($device)
         {
-            $out = shell_exec('pactl set-card-profile 0 ' . $device);
+            $audio_device = [
+                'internal'=>'output:analog-stereo+input:analog-stereo',
+                'hdmi'=>'output:hdmi-stereo-extra1'
+            ];
+            $out = shell_exec('pactl set-card-profile 0 ' . $audio_device[$device]);
             return $out;
         }
         function save($device)

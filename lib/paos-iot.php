@@ -80,7 +80,10 @@ namespace paos_iot {
             return shell_exec('sudo -H -u parsec bash -c \'sudo pkill parsec\'');
         }
         function update(){
-            return shell_exec('sudo '.python . ' ' . py_path . 'update.py');
+            shell_exec('git reset --hard HEAD');
+            shell_exec('git pull');
+            shell_exec('sudo chmod +x -R *');
+            return;
         }
     }
     class settings

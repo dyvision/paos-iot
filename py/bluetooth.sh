@@ -13,6 +13,7 @@ send_user "\nSleeping\r"
 sleep 5
 send_user "\nDone sleeping\r"
 send "scan off\r"
+sleep 1
 expect "Controller"
 send "trust $address\r"
 sleep 2

@@ -19,8 +19,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     } else {
         $audio = new audio();
-        if (json_decode($audio->set_device($post['device']), true)) {
-            #$audio->save($post['device']);
+        $json = json_decode($audio->set_device($post['device']), true);
+        if ($json) {
             $response['message'] = 'device changed to ' . $post['device'];
         } else {
             $response['message'] = 'could not connect';

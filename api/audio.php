@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     } else {
         $audio = new audio();
-        $json = json_decode($audio->set_device($post['device']), true);
+        $json = $audio->set_device($post['device']);
         print_r($json);
         if ($json) {
             $response['message'] = 'device changed to ' . $post['device'];

@@ -1,4 +1,5 @@
 <head>
+    <title>Parsec Arcade OS | Parsec</title>
     <script src='lib/paos_iot.js'></script>
     <link href='style/style.css' rel='stylesheet'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
@@ -6,7 +7,9 @@
 
 <body>
     <center>
-    <a href='home.php'><div class='exit'>X</div></a>
+        <a href='home.php'>
+            <div class='exit'>X</div>
+        </a>
         <div class='card'>
             <img width='100%' height='auto' src='https://parsec.app/static/opengraph-1a87b526f2a0a7c39d89fd5f3444b947.png'>
             <div class='card-body'>

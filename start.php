@@ -6,6 +6,7 @@ include('lib/paos-iot.php');
 ?>
 
 <head>
+    <title>Parsec Arcade OS | Start</title>
     <link href='style/style.css' rel='stylesheet'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="stylesheet"

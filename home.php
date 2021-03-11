@@ -11,7 +11,7 @@
     <center>
         <div class='card'>
             <img width='100%' height='auto' src='style/paos.png'>
-            <div style='overflow-y:scroll' class='card-body'>
+            <div class='card-body'>
                 <h1>Welcome to PAOS</h1>
                 <a class='menuitem' href='parsec.php'>Launch Parsec</a>
                 <a class='menuitem' href='wifi.php'>WiFi</a>

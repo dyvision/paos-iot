@@ -7,6 +7,10 @@
     }
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 body {
     animation: fade 600ms forwards;
     font-family: helvetica, arial, ubuntu;
@@ -21,12 +25,12 @@ body {
     border: 1px;
     border-color: grey;
     box-shadow: 2px 4px 8px rgb(26, 26, 26);
+    overflow-y: scroll;
 }
 
 .card-body {
     padding: 10px;
     text-align: left;
-    height: 100%
 }
 
 .exit {

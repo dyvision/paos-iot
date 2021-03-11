@@ -33,5 +33,5 @@ if ($cached != '') {
     <button>Change Device</button>
 </form>
 <h3>Volume</h3>
-<button type='button' onclick="set_volume('up',10);">+</button>
-<button type='button' onclick="set_volume('down',10);">-</button>
+<button type='button' onclick="set_volume('up','10');">+</button>
+<button type='button' onclick="set_volume('down','10');">-</button>

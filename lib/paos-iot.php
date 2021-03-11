@@ -182,8 +182,13 @@ namespace paos_iot {
         function device_set()
         {
         }
-        function resolution()
+        function get_resolution($type = null){
+            $result = ['720p'=>'1280x720','1080p'=>'1920x1080','2k'=>'2560x1440','4k'=>'3840x2160'];
+            return json_encode($result);
+        }
+        function set_resolution($size)
         {
+            return shell_exec('export DISPLAY=:0;xrandr -s '.$size);
         }
     }
     class blue{

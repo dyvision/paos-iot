@@ -88,9 +88,6 @@ class display:
     def set_device(self, device):
         return
 
-    def resolution(self, resolution):
-        return
-
 
 class commands:
     def kill_session(self):

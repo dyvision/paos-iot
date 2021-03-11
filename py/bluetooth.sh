@@ -9,8 +9,8 @@ send "remove $address\r"
 sleep 1
 expect -re $prompt
 send "scan on\r"
-send_user "\nSleeping\r"
 sleep 5
+send_user "\nSleeping\r"
 send_user "\nDone sleeping\r"
 expect "Controller"
 send "trust $address\r"

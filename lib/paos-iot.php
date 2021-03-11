@@ -82,7 +82,7 @@ namespace paos_iot {
         function update(){
             shell_exec('git reset --hard HEAD');
             shell_exec('git pull');
-            shell_exec('sudo chmod +x -R *');
+            shell_exec('chmod +x -R *');
             return;
         }
     }

@@ -162,7 +162,7 @@ namespace paos_iot {
                 'hdmi' => 'output:hdmi-stereo-extra1'
             ];
             try {
-                exec('export DISPLAY=:0;pactl set-card-profile 0 ' . $audio_device[$device]);
+                exec('pactl --server "unix:/run/user/$(id -u)/pulse/native" set-card-profile 0 ' . $audio_device[$device]);
                 return true;
             } catch (Exception $e) {
                 return $e->getMessage();

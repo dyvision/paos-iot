@@ -27,7 +27,7 @@ include('lib/paos-iot.php');
                     <center>
                         <img style='margin:8px' width='20%' src='style/qr-code.png'>
                     </center>
-                    <span style='font-size:1vw;color:grey'><?php echo 'Version: '.json_decode(file_get_contents('version/version.json'),true)['version']; ?></span></br></br>
+                    <span style='position:absolute;float:left;bottom:0;font-size:1vw;color:grey'><?php echo 'Version: '.json_decode(file_get_contents('version/version.json'),true)['version']; ?></span></br></br>
                     
                 <?php
                 } else {

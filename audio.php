@@ -18,7 +18,7 @@ if ($cached != '') {
 ?>
 
 <form action='api/audio.php' method='POST'>
-    <select disabled name='device'>
+    <select name='device'>
         <?php
 
 

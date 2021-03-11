@@ -30,7 +30,7 @@ if ($cached != '') {
 
         ?>
     </select>
-    <button disabled>Change Device</button>
+    <button>Change Device</button>
 </form>
 <?php print_r($audio->get_device())?>
 <h3>Volume</h3>

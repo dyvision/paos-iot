@@ -79,6 +79,9 @@ namespace paos_iot {
         {
             return shell_exec('sudo -H -u parsec bash -c \'sudo pkill parsec\'');
         }
+        function update(){
+            return (python . ' ' . py_path . 'update.py');
+        }
     }
     class settings
     {

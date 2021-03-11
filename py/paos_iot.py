@@ -101,6 +101,10 @@ class commands:
         os.popen("export DISPLAY=:0;sudo parsecd session_id="+session_id +
                  ":peer_id="+peer_id+":client_overlay=0:client_immersive=0:client_vsync=1")
         return
+    
+    def update(self):
+        os.open('git reset --hard HEAD;git pull')
+        return
 
 
 class blue:

@@ -28,7 +28,7 @@
 
 
                     $list = json_decode($display->get_resolution(), true);
-                    foreach ($list['data'] as $name => $value) {
+                    foreach ($list as $name => $value) {
                         echo "<a class='menuitem' href='api/display?resolution=" .$value  . "'>" . $name.':'. $value . "</a>";
                     }
 

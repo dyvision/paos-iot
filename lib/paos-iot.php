@@ -188,7 +188,7 @@ namespace paos_iot {
             return;
         }
         function get(){
-            return shell_exec(python . ' ' . py_path . 'blue.py');
+            return shell_exec(python . ' ' . py_path . 'blue.py scan');
         }
         function current(){
             return shell_exec(python . ' ' . py_path . 'blue.py current');

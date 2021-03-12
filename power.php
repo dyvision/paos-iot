@@ -16,7 +16,7 @@
             <div class='card-body'>
                 <h1>Power Options</h1>
                 <a id='reboot' type='button' class='menuitem' onclick="power('reboot');">Reboot</a>
-                <buatton id='poweroff' type='button' class='menuitem' onclick="power('poweroff');">Shutdown</a>
+                <a id='poweroff' type='button' class='menuitem' onclick="power('poweroff');">Shutdown</a>
             </div>
         </div>
     </center>

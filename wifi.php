@@ -48,7 +48,7 @@
         ?>
     </select>-->
                 <input id='password' type='password' name='password' placeholder="password">
-                <button type='button' onclick='wifi(document.getElementById("ssid").value,document.getElementById("password").value)'>Connect</button>
+                <button id='connect' type='button' onclick='wifi(document.getElementById("ssid").value,document.getElementById("password").value)'>Connect</button>
             </form>
         </div>
     </center>

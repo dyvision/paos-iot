@@ -15,8 +15,8 @@
             <img width='100%' height='auto' src='style/connection.png'>
             <div class='card-body'>
                 <h1>Power Options</h1>
-                <a class='menuitem' href='api/power.php?option=reboot'>Reboot</a>
-                <a class='menuitem' href='api/power.php?option=poweroff'>Shutdown</a>
+                <a class='menuitem' onclick='power("reboot")'>Reboot</a>
+                <a class='menuitem' onclick='power("poweroff")'>Shutdown</a>
             </div>
         </div>
     </center>

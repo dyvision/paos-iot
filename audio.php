@@ -1,5 +1,5 @@
 <head>
-    <title>audio Arcade OS | Audio</title>
+    <title>Parsec Arcade OS | Audio</title>
     <script src='lib/paos_iot.js'></script>
     <link href='style/style.css' rel='stylesheet'>
     <link rel='shortcut icon' type='image/png' href='style/paoslogo.png' />

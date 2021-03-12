@@ -226,4 +226,18 @@ namespace paos_iot {
             return shell_exec(python . ' ' . py_path . 'blue.py disconnect ' . $device);
         }
     }
+    class power{
+        function __construct()
+        {
+            return;
+        }
+        function power_off(){
+            shell_exec('sudo shutdown');
+            return;
+        }
+        function reboot(){
+            shell_exec('sudo reboot');
+            return;
+        }
+    }
 }

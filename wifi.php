@@ -1,5 +1,6 @@
 <head>
     <title>Parsec Arcade OS | Wifi</title>
+    <script src='lib/paos_iot.js'></script>
     <link href='style/style.css' rel='stylesheet'>
     <link rel='shortcut icon' type='image/png' href='style/paoslogo.png' />
     <meta name='viewport' content='width=device-width, initial-scale=1'>

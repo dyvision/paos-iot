@@ -8,8 +8,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     if ($_GET['option'] == 'poweroff') {
         $power = new power();
         $power->power_off();
+        header('location: power.php');
     } else {
         $power = new power();
         $power->reboot();
+        header('location: power.php');
     }
 }

@@ -15,8 +15,8 @@
             <img width='100%' height='auto' src='style/connection.png'>
             <div class='card-body'>
                 <h1>Power Options</h1>
-                <button id='reboot' type='button' class='menuitem' onclick="power('reboot');">Reboot</button>
-                <button id='poweroff' type='button' class='menuitem' onclick="power('poweroff');">Shutdown</button>
+                <a id='reboot' type='button' class='menuitem' onclick="power('reboot');">Reboot</a>
+                <buatton id='poweroff' type='button' class='menuitem' onclick="power('poweroff');">Shutdown</a>
             </div>
         </div>
     </center>

@@ -19,7 +19,7 @@
                 <a class='menuitem' href='display.php'>Display</a>
                 <a class='menuitem' href='audio.php'>Audio</a>
                 <a class='menuitem' href='api/update.php'>Update</a>
-                <a class='menuitem' href='api/power.php'>Power</a>
+                <a class='menuitem' href='power.php'>Power</a>
             </div>
     </center>
 </body>

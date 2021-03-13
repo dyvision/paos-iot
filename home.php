@@ -19,7 +19,7 @@
                 <a id='blue' class='menuitem' href='bluetooth.php' onclick='document.getElementById("blue").innerHTML = "Bluetooth - Scanning"'>Bluetooth</a>
                 <a class='menuitem' href='display.php'>Display</a>
                 <a class='menuitem' href='audio.php'>Audio</a>
-                <a onclick='update_sys();' type='button' class='menuitem'>Update</a>
+                <a id='update' onclick='update_sys();' type='button' class='menuitem'>Update</a>
                 <a class='menuitem' href='power.php'>Power</a>
             </div>
     </center>

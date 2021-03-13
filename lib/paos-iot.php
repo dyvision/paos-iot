@@ -84,11 +84,13 @@ namespace paos_iot {
         }
         function update()
         {
+            shell_exec('sudo service bluetooth restart');
             shell_exec('git reset --hard HEAD');
             shell_exec('git pull');
             shell_exec('chmod +x -R ' . py_path . '*');
             
             shell_exec('cd /home/parsec/paos-start/;git reset --hard HEAD;git pull;sudo chmod +x *;');
+            shell_exec('sudo reboot');
             return;
         }
     }

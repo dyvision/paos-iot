@@ -9,6 +9,6 @@ try:
     elif str(sys.argv[1] == 'scan'):
         print(audio_cli.get_device())
     else:
-        print(audio_cli.set_device(sys.argv[2]))
+        print(audio_cli.set_device(sys.argv[3]))
 except:
     print('error')

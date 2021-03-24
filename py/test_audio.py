@@ -2,4 +2,4 @@ import pulsectl
 
 pulse = pulsectl.Pulse('paos')
 
-print(pulse.source_list()[0])
+print(pulse.source_list()[0]['description'])

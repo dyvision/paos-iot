@@ -29,7 +29,7 @@
 
             $list = json_decode($audio->get_device(), true);
             foreach ($list as $name => $value) {
-                echo "<a class='menuitem' href='api/audio.php?device=" . $name  . "'>" . $name . "</a>";
+                echo "<a class='menuitem' href='api/audio.php?device=" . $name['id']  . "'>" . $name['name'] . "</a>";
             }
 
 

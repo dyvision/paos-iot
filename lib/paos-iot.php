@@ -163,13 +163,13 @@ namespace paos_iot {
         }
         function get_device()
         {
-            return json_encode($this->profiles);
+            return shell_exec(python . ' ' . py_path . 'audio.py scan');
         }
         function set_device($device)
         {
             
             try {
-                exec('pactl --server "unix:/run/user/$(id -u)/pulse/native" set-card-profile 0 ' . $this->profiles[$device]);
+                shell_exec(python . ' ' . py_path . 'audio.py set '.$device);
                 return true;
             } catch (Exception $e) {
                 return $e->getMessage();

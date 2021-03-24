@@ -11,9 +11,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     if ($audio->set_device(urldecode($_GET['device']))) {
         echo urldecode($_GET['device']);
         #$audio->save($post['device']);
-        #header('location: ../audio.php');
+        header('location: ../audio.php');
     } else {
-        #header('location: ../audio.php?error=1');
+        header('location: ../audio.php?error=1');
     }
 } elseif ($_SERVER['REQUEST_METHOD'] == 'PUT') {
     $post = json_decode(file_get_contents('php://input'), true);

@@ -50,7 +50,8 @@ class audio:
         
         pulse = pulsectl.Pulse('paos')
         dev_list = pulse.card_list()[0]
-        for device in dev_list:
+        profiles = dev_list.profile_list()
+        for device in profiles:
             device_list.append(device)
 
         return json.dumps(device_list)

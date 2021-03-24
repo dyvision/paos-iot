@@ -8,7 +8,7 @@ use paos_iot\audio;
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     $audio = new audio();
-    if (json_decode($audio->set_device(urldecode($_GET['device'])), true)) {
+    if ($audio->set_device(base64_decode($_GET['device']))) {
         #$audio->save($post['device']);
         header('location: ../audio.php');
     } else {

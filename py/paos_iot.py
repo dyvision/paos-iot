@@ -49,15 +49,18 @@ class audio:
         device_list = []
         
         pulse = pulsectl.Pulse('paos')
-        dev_list = pulse.card_list()[0]
-        profiles = dev_list.profile_list
+        card = pulse.card_list()[0]
+        profiles = card.profile_list
         for device in profiles:
             device_list.append({"name":device.description,"id":device.name})
 
         return json.dumps(device_list)
 
     def set_device(self, device):
-        os.popen('pacmd set-card-profile 0 '+device)
+        pulse = pulsectl.Pulse('paos')
+        card = pulse.card_list()[0]
+        pulse.card_profile_set(card,device)
+        
         return
 
     def set_volume(self, direction, value):

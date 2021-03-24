@@ -145,10 +145,6 @@ namespace paos_iot {
 
         function __construct()
         {
-            $this->profiles = [
-                'internal' => 'output:analog-stereo+input:analog-stereo',
-                'hdmi' => 'output:hdmi-stereo-extra1'
-            ];
             return;
         }
         function set_volume($direction)
@@ -167,13 +163,7 @@ namespace paos_iot {
         }
         function set_device($device)
         {
-            
-            try {
-                shell_exec(python . ' ' . py_path . 'audio.py set '.$device);
-                return true;
-            } catch (Exception $e) {
-                return $e->getMessage();
-            }
+                return shell_exec(python . ' ' . py_path . 'audio.py set '.$device);
         }
         function save($device)
         {

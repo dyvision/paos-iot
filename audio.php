@@ -28,7 +28,7 @@
 
 
             $list = json_decode($audio->get_device(), true);
-            foreach ($list as $name => $value) {
+            foreach ($list as $name) {
                 echo "<a class='menuitem' href='api/audio.php?device=" . $name['id']  . "'>" . $name['name'] . "</a>";
             }
 

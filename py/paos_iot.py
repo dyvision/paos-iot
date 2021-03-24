@@ -51,8 +51,8 @@ class audio:
         pulse = pulsectl.Pulse('paos')
         for device in pulse.source_list():
             result = {}
-            result['nice_name'] = device.description
-            result['true_name'] = device.name
+            result.nice_name = device.description
+            result.true_name = device.name
             device_list += result
 
         return json.dumps(device_list)

@@ -163,7 +163,7 @@ namespace paos_iot {
         }
         function set_device($device)
         {
-                return shell_exec('sudo -H -u parsec bash -c \'sudo ' . python . ' ' . py_path . 'audio.py set ' . $device.'\'');
+                return shell_exec('sudo -H -u parsec bash -c \'' . python . ' ' . py_path . 'audio.py set ' . $device.'\'');
         }
         function save($device)
         {

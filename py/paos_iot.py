@@ -47,6 +47,7 @@ class wifi:
 class audio:
     def get_device(self):
         device_list = []
+        result = {}
         pulse = pulsectl.Pulse('paos')
         for device in pulse.source_list():
             result['nice_name'] = device.description

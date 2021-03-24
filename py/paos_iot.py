@@ -8,6 +8,7 @@ import os
 import time
 import alsaaudio
 import math
+import pulsectl
 import bluetooth
 from subprocess import call
 from wireless import Wireless
@@ -46,22 +47,13 @@ class wifi:
 class audio:
     def get_device(self):
         device_list = []
-        shelllist = os.popen(
-            'pacmd list-cards | grep -E "output:" | grep -E ":analog-stereo"').read().splitlines()
-        active_device = shelllist[-1]
-        del(shelllist[-1])
-        del(shelllist[0])
-        for device in shelllist:
-            stringarray = []
-            stringarray = device.split(':')
-            new_device = stringarray[0]+':'+stringarray[1]+':'+stringarray[2]
-            device_list.append(new_device.strip())
+        pulse = pulsectl.Pulse('paos')
+        for device in pulse.source_list():
+            result['nice_name'] = device.description
+            result['true_name'] = device.name
+            device_list += result
 
-        current_device = active_device.split(':', 1)
-        result = {
-            'active_device': current_device[1], "available_devices": device_list}
-
-        return json.dumps(result)
+        return json.dumps(device_list)
 
     def set_device(self, device):
         os.popen('pacmd set-card-profile 0 '+device)

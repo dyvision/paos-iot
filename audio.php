@@ -29,7 +29,7 @@
 
             $list = json_decode($audio->get_device(), true);
             foreach ($list as $name) {
-                echo "<a class='menuitem' href='api/audio.php?device=" . base64_encode($name['id'])  . "'>" . $name['name'] . "</a>";
+                echo "<a class='menuitem' href='api/audio.php?device=" . urlencode($name['id'])  . "'>" . $name['name'] . "</a>";
             }
 
 

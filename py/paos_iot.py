@@ -6,7 +6,6 @@ import urllib
 import xml.etree.ElementTree as tree
 import os
 import time
-import alsaaudio
 import math
 import pulsectl
 import bluetooth

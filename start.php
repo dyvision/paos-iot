@@ -3,7 +3,7 @@
 use paos_iot\settings;
 
 include('lib/paos-iot.php');
-shell_exec('xset s off;xset s noblank;xset -dpms;xset dpms 0 0 0;');
+//shell_exec('xset s off;xset s noblank;xset -dpms;xset dpms 0 0 0;');
 ?>
 
 <head>
